@@ -10,8 +10,8 @@
         <Button x:Name="True" Content="test" HorizontalAlignment="Left" Margin="101,494,0,0" VerticalAlignment="Top" Width="194" Height="60" Click="True_Click"/>
 
         <PasswordBox HorizontalAlignment="Left" Margin="132,282,0,0" VerticalAlignment="Top" Width="194" BorderBrush="Black"/>
-        <Label Content="Password/ID&#xA;" HorizontalAlignment="Left" Margin="47,277,0,0" VerticalAlignment="Top" Foreground="#DD000000" Height="30" Width="79"/>
-        <Label Content="Username" HorizontalAlignment="Left" Margin="65,236,0,0" VerticalAlignment="Top" Foreground="#DD000000"/>
+        <Label Content="Password/ID&#xA;" HorizontalAlignment="Left" Margin="51,277,0,0" VerticalAlignment="Top" Foreground="#DD000000" Height="30" Width="76"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="66,236,0,0" VerticalAlignment="Top" Foreground="#DD000000"/>
         <TextBox HorizontalAlignment="Left" Height="30" Margin="132,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" BorderBrush="Black"/>
     </Grid>
 </Window>
