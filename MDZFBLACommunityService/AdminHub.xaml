@@ -12,8 +12,7 @@
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="AdminHub" Height="675" Width="1200" WindowStartupLocation="CenterScreen">
-
+        Title="AdminHub" Height="675" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid Background="#FF1B262C">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -23,24 +22,33 @@
 
 
         </Grid.ColumnDefinitions>
-        <Rectangle Fill="#FF0F4C75" HorizontalAlignment="Left" Height="44" Margin="10,352,0,0" VerticalAlignment="Top" Width="232"/>
 
-        <Menu HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="133"  Background="#FF0F4C75" />
-        <Rectangle MouseDown="Rectangle_MouseDown" Fill="#FF0F4C75" HorizontalAlignment="Left" Height="31" Margin="117,0,0,0" VerticalAlignment="Top" Width="1075"/>
+        <Menu HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="133"  Background="#FF9CD7FF" Foreground="Black" >
+            <MenuItem Header="_File" Height="31">
+                <MenuItem Header="_New" />
+                <MenuItem Header="_Open" />
+                <MenuItem Header="_Save" />
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
 
-        <Button Content="Button" x:Name="close" HorizontalAlignment="Left" Margin="1152,0,0,0" VerticalAlignment="Top" Width="40" Height="31" BorderThickness="0" UseLayoutRounding="False" Click="Close_Click" />
+        </Menu>
+        <Rectangle MouseDown="Rectangle_MouseDown" Fill="#FF9CD7FF" HorizontalAlignment="Left" Height="31" Margin="133,0,0,0" VerticalAlignment="Top" Width="1059"/>
+
+        <Button Content="X" x:Name="close" HorizontalAlignment="Left" Margin="1152,0,0,0" VerticalAlignment="Top" Width="40" Height="31" BorderThickness="0" UseLayoutRounding="False" Click="Close_Click" Background="{x:Null}" BorderBrush="Black" />
         <Button Content="Button" HorizontalAlignment="Left" Height="44" Margin="17,144,0,0" VerticalAlignment="Top" Width="210" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000"/>
         <Rectangle Fill="#FF0F4C75" HorizontalAlignment="Left" Height="56" Margin="0,83,0,0" VerticalAlignment="Top" Width="247"/>
-        <Button x:Name="asd" Content="Button" HorizontalAlignment="Left" Height="44" Margin="0,144,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}" Click="Asd_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="44" Margin="0,242,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="44" Margin="0,193,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}"/>
+        <Button x:Name="asd" Content="Select Person" HorizontalAlignment="Left" Height="44" Margin="0,144,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}" Click="Asd_Click"/>
+        <Button Content="History" HorizontalAlignment="Left" Height="44" Margin="0,242,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="44" Margin="0,193,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}"/>
         <Label Content="Student View" HorizontalAlignment="Left" Height="30" Margin="56,96,0,0" VerticalAlignment="Top" Width="134" FontSize="20"/>
-        <Rectangle Fill="#FF0F4C75" HorizontalAlignment="Left" Height="56" Margin="0,291,0,0" VerticalAlignment="Top" Width="247" RadiusY="3.5" RadiusX="3.5"/>
-        <Button x:Name="asd_Copy" Content="Button" Height="44" Margin="10,352,950,0" VerticalAlignment="Top" UseLayoutRounding="True" Background="{x:Null}" Foreground="#DD000000" BorderBrush="{x:Null}" Click="Asd_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="44" Margin="10,450,0,0" VerticalAlignment="Top" Width="232" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="44" Margin="10,401,0,0" VerticalAlignment="Top" Width="232" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}"/>
-        <Label Content="Student View" HorizontalAlignment="Left" Height="30" Margin="56,303,0,0" VerticalAlignment="Top" Width="134" FontSize="20"/>
-        <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Content="Frame" HorizontalAlignment="Left" Height="613" Margin="247,31,0,0" VerticalAlignment="Top" Width="945"/>
+        <Rectangle Fill="#FF0F4C75" HorizontalAlignment="Left" Height="56" Margin="0,340,0,0" VerticalAlignment="Top" Width="247" RadiusY="3.5" RadiusX="3.5"/>
+        <Button Content="Statistics" HorizontalAlignment="Left" Height="44" Margin="0,499,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}"/>
+        <Button x:Name="CreateNewStudent" Content="Create New Student" HorizontalAlignment="Left" Height="44" Margin="0,450,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}" Click="CreateNewStudent_Click"/>
+        <Label Content="Admin Console" HorizontalAlignment="Left" Height="30" Margin="56,353,0,0" VerticalAlignment="Top" Width="156" FontSize="20"/>
+        <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Content="Frame&#xD;&#xA;" HorizontalAlignment="Left" Height="613" Margin="252,31,0,0" VerticalAlignment="Top" Width="940"/>
+        <Button x:Name="AllPeople" Content="All people" HorizontalAlignment="Left" Height="44" Margin="0,401,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}" Click="AllPeople_Click"/>
+        <Button Content="Ranking" HorizontalAlignment="Left" Height="44" Margin="0,291,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}"/>
 
     </Grid>
 

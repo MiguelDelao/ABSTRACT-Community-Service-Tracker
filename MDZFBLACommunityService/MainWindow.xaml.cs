@@ -47,6 +47,9 @@ namespace MDZFBLACommunityService
         {
             AdminHub ad = new AdminHub();
             ad.Show();
+            Close();
         }
+
+
     }
 }

@@ -49,5 +49,16 @@ namespace MDZFBLACommunityService
         {
             this.Close();
         }
+
+        private void AllPeople_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new AdminAllPeople());
+
+        }
+
+        private void CreateNewStudent_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new PACreateStudent());
+        }
     }
 }
