@@ -23,7 +23,7 @@
 
         </Grid.ColumnDefinitions>
 
-        <Menu HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="133"  Background="#FF9CD7FF" Foreground="Black" >
+        <Menu HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="133"  Background="White" Foreground="Black" >
             <MenuItem Header="_File" Height="31">
                 <MenuItem Header="_New" />
                 <MenuItem Header="_Open" />
@@ -33,9 +33,7 @@
             </MenuItem>
 
         </Menu>
-        <Rectangle MouseDown="Rectangle_MouseDown" Fill="#FF9CD7FF" HorizontalAlignment="Left" Height="31" Margin="133,0,0,0" VerticalAlignment="Top" Width="1059"/>
-
-        <Button Content="X" x:Name="close" HorizontalAlignment="Left" Margin="1152,0,0,0" VerticalAlignment="Top" Width="40" Height="31" BorderThickness="0" UseLayoutRounding="False" Click="Close_Click" Background="{x:Null}" BorderBrush="Black" />
+        <Rectangle MouseDown="Rectangle_MouseDown" Fill="White" HorizontalAlignment="Left" Height="31" Margin="120,0,0,0" VerticalAlignment="Top" Width="1080"/>
         <Button Content="Button" HorizontalAlignment="Left" Height="44" Margin="17,144,0,0" VerticalAlignment="Top" Width="210" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000"/>
         <Rectangle Fill="#FF0F4C75" HorizontalAlignment="Left" Height="56" Margin="0,83,0,0" VerticalAlignment="Top" Width="247"/>
         <Button x:Name="asd" Content="Select Person" HorizontalAlignment="Left" Height="44" Margin="0,144,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}" Click="Asd_Click"/>
@@ -46,9 +44,12 @@
         <Button Content="Statistics" HorizontalAlignment="Left" Height="44" Margin="0,499,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}"/>
         <Button x:Name="CreateNewStudent" Content="Create New Student" HorizontalAlignment="Left" Height="44" Margin="0,450,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}" Click="CreateNewStudent_Click"/>
         <Label Content="Admin Console" HorizontalAlignment="Left" Height="30" Margin="56,353,0,0" VerticalAlignment="Top" Width="156" FontSize="20"/>
-        <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Content="Frame&#xD;&#xA;" HorizontalAlignment="Left" Height="613" Margin="252,31,0,0" VerticalAlignment="Top" Width="940"/>
+        <Frame KeyDown="MainFrame_KeyDown" NavigationUIVisibility="Hidden" x:Name="MainFrame" Content="Frame&#xD;&#xA;" HorizontalAlignment="Left" Height="634" Margin="252,31,0,0" VerticalAlignment="Top" Width="940" Navigated="MainFrame_Navigated"/>
         <Button x:Name="AllPeople" Content="All people" HorizontalAlignment="Left" Height="44" Margin="0,401,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}" Click="AllPeople_Click"/>
         <Button Content="Ranking" HorizontalAlignment="Left" Height="44" Margin="0,291,0,0" VerticalAlignment="Top" Width="247" UseLayoutRounding="True" Background="#FFBBE1FA" Foreground="#DD000000" BorderBrush="{x:Null}"/>
+        <Button Content="X" x:Name="close" HorizontalAlignment="Left" Margin="1159.2,0,0,0" VerticalAlignment="Top" Width="40.8" Height="31" BorderThickness="0" UseLayoutRounding="False" Click="Close_Click" Background="{x:Null}" BorderBrush="Black" Foreground="#DDFF0000" />
+        <Button Content="?" HorizontalAlignment="Left" Margin="17,633,0,0" VerticalAlignment="Top" Width="45" />
+
 
     </Grid>
 

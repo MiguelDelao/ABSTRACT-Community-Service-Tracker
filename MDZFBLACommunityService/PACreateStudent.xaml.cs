@@ -24,5 +24,12 @@ namespace MDZFBLACommunityService
         {
             InitializeComponent();
         }
+
+        private void Create_Person_Click(object sender, RoutedEventArgs e)
+        {
+            Person temporary = new Person(firstNameTextBox.Text, lastNameTextBox.Text,Database.GenerateID(),int.Parse(GradeComboBox.Text),double.Parse(HoursTextBox.Text));
+            Database.Insert(temporary);
+        }
+
     }
 }

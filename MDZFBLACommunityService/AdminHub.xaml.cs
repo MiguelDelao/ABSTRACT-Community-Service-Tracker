@@ -22,7 +22,8 @@ namespace MDZFBLACommunityService
         public AdminHub()
         {
             InitializeComponent();
-            
+            Database db = new Database();
+              
         }
 
 
@@ -42,7 +43,7 @@ namespace MDZFBLACommunityService
 
         private void MainFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
-
+           
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -56,9 +57,21 @@ namespace MDZFBLACommunityService
 
         }
 
+
         private void CreateNewStudent_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new PACreateStudent());
+            NavigationCommands.BrowseBack.InputGestures.Clear();
+            NavigationCommands.BrowseForward.InputGestures.Clear();
         }
+
+        private void MainFrame_KeyDown(object sender, KeyEventArgs e)
+        {
+            NavigationCommands.BrowseBack.InputGestures.Clear();
+            NavigationCommands.BrowseForward.InputGestures.Clear();
+        }
+
+
     }
+
 }

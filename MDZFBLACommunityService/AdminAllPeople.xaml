@@ -8,10 +8,36 @@
       d:DesignHeight="613" d:DesignWidth="940"
       Title="AdminAllPeople" Loaded="Page_Loaded">
 
-    <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="430" Margin="264,124,0,0" VerticalAlignment="Top" Width="620"/>
+    <Grid Background="#FF823F3F">
+        <DataGrid  CanUserAddRows="False" IsReadOnly="True" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" x:Name="AllStudentsDataGrid" HorizontalAlignment="Left" Height="481" Margin="310,122,0,0" VerticalAlignment="Top" Width="620" SelectionChanged="AllStudentsDataGrid_SelectionChanged" Background="#FF303030" GridLinesVisibility="Horizontal" BorderBrush="{x:Null}">
+            <DataGrid.Foreground>
+                <SolidColorBrush Color="#FFFBFDFF"/>
+
+            </DataGrid.Foreground>
+
+
+        </DataGrid>
         <Label Content="Label" HorizontalAlignment="Left" Margin="94,262,0,0" VerticalAlignment="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="100,122,0,0" VerticalAlignment="Top" Width="76"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="151,264,0,0" VerticalAlignment="Top" Width="76"/>
+        <CheckBox Content="9th Grade&#xD;&#xA;" HorizontalAlignment="Left" Margin="606,23,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Foreground="White" Height="19" Width="101" FontSize="14"/>
+        <CheckBox Content="11th grade&#xA;" HorizontalAlignment="Left" Margin="606,49,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Foreground="White" Height="22" Width="101" FontSize="14"/>
+        <CheckBox Content="10th grade&#xA;" HorizontalAlignment="Left" Margin="712,23,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Foreground="White" Height="19" Width="95" FontSize="14"/>
+        <CheckBox Content="500" HorizontalAlignment="Left" Margin="490,52,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Foreground="White" Height="19" Width="85" FontSize="14"/>
+        <CheckBox Content="200&#xA;" HorizontalAlignment="Left" Margin="400,52,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Foreground="White" Height="19" Width="85" FontSize="14"/>
+        <CheckBox  Content="50&#xA;" HorizontalAlignment="Left" Margin="70,35,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Foreground="White" Height="19" Width="85" FontSize="14"/>
+        <Expander Header="Advanced&#xD;&#xA;" HorizontalAlignment="Left" Height="46" Margin="301,1,0,0" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.5,0.5" Foreground="White">
+            <Expander.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.449"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.392"/>
+                </TransformGroup>
+            </Expander.RenderTransform>
+            <Grid Background="#FFE5E5E5"/>
+        </Expander>
+        <CheckBox Content="12th grade" HorizontalAlignment="Left" Margin="706,49,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Foreground="White" Height="22" Width="101" FontSize="14"/>
+        <Grid HorizontalAlignment="Left" Height="28" Margin="129,162,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Page>

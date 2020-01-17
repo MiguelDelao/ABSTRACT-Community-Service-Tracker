@@ -10,12 +10,12 @@ namespace MDZFBLACommunityService
     //Person class holds all info for the student
     class Person
     {
-        private string FirstName { get; set; }
-        private string LastName { get; set; }
-        private int ID { get; set; }
-        private int Grade { get; set; }
-        private double[] Hours { get; set; }
-        private DateTime Time { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int ID { get; set; }
+        public int Grade { get; set; }
+        public double Hours { get; set; }
+        public DateTime Time { get; set; }
 
         public Person()
         {
@@ -23,12 +23,12 @@ namespace MDZFBLACommunityService
             LastName = null;
             ID = 0;
             Grade = 0;
-            Hours = null;
+            Hours = 0;
 
 
         }
 
-        public Person(string a, string b, int c, int d, double[] e, DateTime f)
+        public Person(string a, string b, int c, int d, double e, DateTime f)
         {
             FirstName = a;
             LastName = b;
@@ -36,6 +36,15 @@ namespace MDZFBLACommunityService
             Grade = d;
             Hours = e;
             Time = f;
+        }
+        public Person(string a, string b, int c, int d, double e)
+        {
+            FirstName = a;
+            LastName = b;
+            ID = c;
+            Grade = d;
+            Hours = e;
+            Time = DateTime.Now;
         }
 
     }

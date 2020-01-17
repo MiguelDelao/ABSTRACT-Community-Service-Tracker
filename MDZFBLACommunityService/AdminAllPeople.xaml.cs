@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LiteDB;
 
 namespace MDZFBLACommunityService
 {
@@ -27,7 +28,19 @@ namespace MDZFBLACommunityService
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            using (var db = new LiteDatabase("//mydata.db"))
+                AllStudentsDataGrid.ItemsSource = Database.People();
+           
+        }
+
+        private void AllStudentsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
