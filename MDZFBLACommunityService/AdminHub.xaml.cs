@@ -71,7 +71,30 @@ namespace MDZFBLACommunityService
             NavigationCommands.BrowseForward.InputGestures.Clear();
         }
 
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void Help_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Prefrences_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }

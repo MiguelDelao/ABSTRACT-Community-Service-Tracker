@@ -60,5 +60,15 @@ namespace MDZFBLACommunityService
                 
             }
         }
+
+        public static void Update(Person pep)
+        {
+            using (var db = new LiteDatabase("..\\MyData.db"))
+            {
+                var col = db.GetCollection<Person>("people");
+                Console.Out.WriteLine(pep.ID);
+                col.Update(pep);
+            }
+        }
     }
 }

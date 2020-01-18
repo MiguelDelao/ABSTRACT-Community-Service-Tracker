@@ -37,13 +37,21 @@ namespace MDZFBLACommunityService
             Hours = e;
             Time = f;
         }
-        public Person(string a, string b, int c, int d, double e)
+        public Person(string fir, string las, int i, int grad, double hour)
         {
-            FirstName = a;
-            LastName = b;
-            ID = c;
-            Grade = d;
-            Hours = e;
+            FirstName = fir;
+            LastName = las;
+            ID = i;
+            Grade = grad;
+            Hours = hour;
+            Time = DateTime.Now;
+        }
+        public Person(string fir, string las, int grad, double hour)
+        {
+            FirstName = fir;
+            LastName = las;
+            Grade = grad;
+            Hours = hour;
             Time = DateTime.Now;
         }
 

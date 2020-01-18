@@ -8,24 +8,12 @@
       d:DesignHeight="613" d:DesignWidth="940"
       Title="AdminAllPeople" Loaded="Page_Loaded">
 
-    <Grid Background="#FF823F3F">
-        <DataGrid  CanUserAddRows="False" IsReadOnly="True" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" x:Name="AllStudentsDataGrid" HorizontalAlignment="Left" Height="481" Margin="310,122,0,0" VerticalAlignment="Top" Width="620" SelectionChanged="AllStudentsDataGrid_SelectionChanged" Background="#FF303030" GridLinesVisibility="Horizontal" BorderBrush="{x:Null}">
-            <DataGrid.Foreground>
-                <SolidColorBrush Color="#FFFBFDFF"/>
+    <Grid Background="Black" Width="948" Height="644">
+        <Rectangle Fill="#FF3E3E49" HorizontalAlignment="Left" Height="35" Margin="256,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="137" RadiusY="4.033" RadiusX="4.033"/>
 
-            </DataGrid.Foreground>
-
-
-        </DataGrid>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="94,262,0,0" VerticalAlignment="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="151,264,0,0" VerticalAlignment="Top" Width="76"/>
-        <CheckBox Content="9th Grade&#xD;&#xA;" HorizontalAlignment="Left" Margin="606,23,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Foreground="White" Height="19" Width="101" FontSize="14"/>
-        <CheckBox Content="11th grade&#xA;" HorizontalAlignment="Left" Margin="606,49,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Foreground="White" Height="22" Width="101" FontSize="14"/>
-        <CheckBox Content="10th grade&#xA;" HorizontalAlignment="Left" Margin="712,23,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Foreground="White" Height="19" Width="95" FontSize="14"/>
-        <CheckBox Content="500" HorizontalAlignment="Left" Margin="490,52,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Foreground="White" Height="19" Width="85" FontSize="14"/>
-        <CheckBox Content="200&#xA;" HorizontalAlignment="Left" Margin="400,52,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Foreground="White" Height="19" Width="85" FontSize="14"/>
-        <CheckBox  Content="50&#xA;" HorizontalAlignment="Left" Margin="70,35,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Foreground="White" Height="19" Width="85" FontSize="14"/>
-        <Expander Header="Advanced&#xD;&#xA;" HorizontalAlignment="Left" Height="46" Margin="301,1,0,0" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.5,0.5" Foreground="White">
+        <DataGrid   CanUserAddRows="False" IsReadOnly="True" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" x:Name="AllStudentsDataGrid" HorizontalAlignment="Left" Height="634" Margin="398,10,0,0" VerticalAlignment="Top" Width="550" SelectionChanged="AllStudentsDataGrid_SelectionChanged" Background="#FF303030" GridLinesVisibility="Horizontal" BorderBrush="{x:Null}" Foreground="#FFFBFDFF"/>
+        <Button x:Name="updateButton" Content="Update" HorizontalAlignment="Left" Margin="10,226,0,0" VerticalAlignment="Top" Width="86" Click="UpdateButton_Click"/>
+        <Expander Header="&#xD;&#xA;Advanced&#xA;" HorizontalAlignment="Left" Height="271" Margin="246,-17,0,0" VerticalAlignment="Top" Width="159" RenderTransformOrigin="0.5,0.5" Foreground="White" Background="{x:Null}" FontWeight="Bold" FontSize="18" IsExpanded="True">
             <Expander.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -34,10 +22,24 @@
                     <TranslateTransform X="0.392"/>
                 </TransformGroup>
             </Expander.RenderTransform>
-            <Grid Background="#FFE5E5E5"/>
         </Expander>
-        <CheckBox Content="12th grade" HorizontalAlignment="Left" Margin="706,49,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Foreground="White" Height="22" Width="101" FontSize="14"/>
-        <Grid HorizontalAlignment="Left" Height="28" Margin="129,162,0,0" VerticalAlignment="Top" Width="100"/>
+        <Grid HorizontalAlignment="Left" Height="157" Margin="10,64,0,0" VerticalAlignment="Top" Width="245">
+            <Label Content="First Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" FontSize="14" Height="29" Margin="0,10,0,0"/>
+            <TextBox x:Name="firstNameTextBox" HorizontalAlignment="Left"  Height="29" Margin="79,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="White" FontSize="14"/>
+            <Label Content="Last Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" FontSize="14" Height="29" Margin="0,39,0,0"/>
+            <TextBox x:Name="lastNameTextBox" HorizontalAlignment="Left"  Height="29" Margin="79,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="White" FontSize="14"/>
+            <Label Content="Hours:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" FontSize="14" Height="29" Margin="0,73,0,0"/>
+            <TextBox x:Name="hoursTextBox" HorizontalAlignment="Left"  Height="29" Margin="79,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="White" FontSize="14" Background="{x:Null}" BorderBrush="White"/>
+            <ComboBox x:Name="GradeComboBox" HorizontalAlignment="Left" Margin="79,107,0,0" VerticalAlignment="Top" Width="33" Background="#FF545454" Height="25" Foreground="White" IsEditable="False" >
+                <ComboBoxItem IsSelected="True" Content="9"/>
+                <ComboBoxItem Content="10" />
+                <ComboBoxItem Content="11" />
+                <ComboBoxItem Content="12" />
+            </ComboBox>
+            <Label Content="Grade:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" FontSize="14" Height="29" Margin="0,107,0,0"/>
+            <TextBlock x:Name="IDTextbox"  HorizontalAlignment="Left" Margin="203,131,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Height="16" Foreground="White" Width="32"/>
+            <TextBlock HorizontalAlignment="Left" Margin="185,131,0,0" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Top" Foreground="White"/>
+        </Grid>
 
     </Grid>
 </Page>

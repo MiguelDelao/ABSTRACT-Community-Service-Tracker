@@ -27,8 +27,17 @@ namespace MDZFBLACommunityService
 
         private void Create_Person_Click(object sender, RoutedEventArgs e)
         {
-            Person temporary = new Person(firstNameTextBox.Text, lastNameTextBox.Text,Database.GenerateID(),int.Parse(GradeComboBox.Text),double.Parse(HoursTextBox.Text));
-            Database.Insert(temporary);
+            try
+            {
+                Person temporary = new Person(firstNameTextBox.Text, lastNameTextBox.Text, Database.GenerateID(), int.Parse(GradeComboBox.Text), double.Parse(HoursTextBox.Text));
+                Database.Insert(temporary);
+            }
+            catch(System.FormatException)
+            {
+                MessageBox.Show("Please make sure everything is filled out, and make sure its in the right format");
+            }
+            
+            //Database.Insert(temporary);
         }
 
     }
