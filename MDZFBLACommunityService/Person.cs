@@ -14,19 +14,18 @@ namespace MDZFBLACommunityService
         public string LastName { get; set; }
         public int ID { get; set; }
         public int Grade { get; set; }
-        public double Hours { get; set; }
-        public DateTime Time { get; set; }
-
+        public Hours Hours { get; set; }
         public Person()
         {
             FirstName = null;
             LastName = null;
             ID = 0;
             Grade = 0;
-            Hours = 0;
+            Hours = new Hours();
 
 
         }
+       
 
         public Person(string a, string b, int c, int d, double e, DateTime f)
         {
@@ -34,26 +33,29 @@ namespace MDZFBLACommunityService
             LastName = b;
             ID = c;
             Grade = d;
-            Hours = e;
-            Time = f;
+            
+
         }
-        public Person(string fir, string las, int i, int grad, double hour)
+        public Person(string fir, string las, int i, int grad, double hour,string even)
         {
             FirstName = fir;
             LastName = las;
             ID = i;
             Grade = grad;
-            Hours = hour;
-            Time = DateTime.Now;
+            Hours = new Hours();
+            Hours.AddEvent(hour, even);
+            
         }
         public Person(string fir, string las, int grad, double hour)
         {
             FirstName = fir;
             LastName = las;
             Grade = grad;
-            Hours = hour;
-            Time = DateTime.Now;
+            
         }
-
+        public override string ToString()
+        {
+            return (FirstName + LastName + ID + Grade );
+        }
     }
 }

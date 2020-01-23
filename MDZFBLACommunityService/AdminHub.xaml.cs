@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LiteDB;
 
 namespace MDZFBLACommunityService
 {
@@ -19,26 +20,23 @@ namespace MDZFBLACommunityService
     /// </summary>
     public partial class AdminHub : Window
     {
+        
+        public static string ppp;
         public AdminHub()
         {
             InitializeComponent();
             Database db = new Database();
-              
+            testlabel.Content = ppp;
+       
         }
 
-
+        
 
 
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
                 DragMove();
-        }
-
-        private void Asd_Click(object sender, RoutedEventArgs e)
-        {
-            Page1 x = new Page1();
-            MainFrame.Navigate(x);
         }
 
         private void MainFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
@@ -53,7 +51,7 @@ namespace MDZFBLACommunityService
 
         private void AllPeople_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new AdminAllPeople());
+            MainFrame.Navigate(new PAAllStudents());
 
         }
 
@@ -88,12 +86,33 @@ namespace MDZFBLACommunityService
 
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
-            
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void TestButton_Click(object sender, RoutedEventArgs e)
+        {
+            testlabel.Content = ppp;
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void SelectPerson_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new PASelectPerson());
+        }
+
+        private void EditStudentButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new PAEditStudent());
         }
     }
 

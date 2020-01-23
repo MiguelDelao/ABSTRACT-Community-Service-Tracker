@@ -67,24 +67,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AdminAllPeople.xaml.cs">
-      <DependentUpon>AdminAllPeople.xaml</DependentUpon>
+    <Compile Include="PAAllStudents.xaml.cs">
+      <DependentUpon>PAAllStudents.xaml</DependentUpon>
     </Compile>
     <Compile Include="AdminHub.xaml.cs">
       <DependentUpon>AdminHub.xaml</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
+    <Compile Include="Hours.cs" />
     <Compile Include="PACreateStudent.xaml.cs">
       <DependentUpon>PACreateStudent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PAEditStudent.xaml.cs">
+      <DependentUpon>PAEditStudent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PASelectPerson.xaml.cs">
+      <DependentUpon>PASelectPerson.xaml</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
-    <Page Include="AdminAllPeople.xaml">
+    <Page Include="PAAllStudents.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,7 +115,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PAEditStudent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PASelectPerson.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

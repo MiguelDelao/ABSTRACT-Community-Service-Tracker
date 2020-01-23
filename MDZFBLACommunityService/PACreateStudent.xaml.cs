@@ -29,7 +29,8 @@ namespace MDZFBLACommunityService
         {
             try
             {
-                Person temporary = new Person(firstNameTextBox.Text, lastNameTextBox.Text, Database.GenerateID(), int.Parse(GradeComboBox.Text), double.Parse(HoursTextBox.Text));
+                Person temporary = new Person(firstNameTextBox.Text, lastNameTextBox.Text, Database.GenerateID(), 
+                    int.Parse(GradeComboBox.Text), double.Parse(HoursTextBox.Text),EventTextBox.Text);
                 Database.Insert(temporary);
             }
             catch(System.FormatException)
@@ -37,8 +38,17 @@ namespace MDZFBLACommunityService
                 MessageBox.Show("Please make sure everything is filled out, and make sure its in the right format");
             }
             
-            //Database.Insert(temporary);
+            
         }
 
+        private void EventTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void HoursTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
