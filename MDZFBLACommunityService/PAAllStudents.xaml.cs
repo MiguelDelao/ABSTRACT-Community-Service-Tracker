@@ -88,47 +88,64 @@ namespace MDZFBLACommunityService
             var testlist = from Person in haha  where (Person.Grade == 11) select Person;
             AllStudentsDataGrid.ItemsSource = testlist;
 
-            
-            
-            //foreach (Person x in haha)
-            //{
-            //    var finalList = new List<Person>();
 
-                
-            //    foreach (Person P in main)
-            //    {
-            //        if ((bool)NineGradeCheckBox.IsChecked && P.Grade == 9)
-            //        {finalList.Add(P);}
-            //        if ((bool)TenGradeCheckBox.IsChecked && P.Grade == 10)
-            //        { finalList.Add(P); }
-            //        if ((bool)EleventhGradeCheckBox.IsChecked && P.Grade == 11)
-            //        { finalList.Add(P); }
-            //        if ((bool)TwelvthGradeCheckBox.IsChecked && P.Grade == 12)
-            //        { finalList.Add(P); }
-            //    }
-            //    foreach (Person p in finalList.ToList())
-            //    {
-            //        if (!(bool)UnrankedCheckBox.IsChecked)
-            //        {
-            //            if (p.Hours < 50) finalList.Remove(p);
-            //        }
-            //        if (!(bool)CommunityCheckBox.IsChecked)
-            //        {
-            //            if (p.Hours >= 50 && p.Hours<200) finalList.Remove(p);
-            //        }
-            //        if (!(bool)ServiceCheckBox.IsChecked)
-            //        {
-            //            if (p.Hours >= 200&&p.Hours <500) finalList.Remove(p);
-            //        }
-            //        if (!(bool)AchievementCheckBox.IsChecked)
-            //        {
-            //            if (p.Hours >= 500) finalList.Remove(p);
-            //        }
-            //    }
-            //    AllStudentsDataGrid.ItemsSource = finalList;
-                
-               
-            //}
+
+            foreach (Person x in haha)
+            {
+                var finalList = new List<Person>();
+
+
+                foreach (Person P in main)
+                {
+                    if ((bool)NineGradeCheckBox.IsChecked && P.Grade == 9)
+                    { finalList.Add(P); }
+                    if ((bool)TenGradeCheckBox.IsChecked && P.Grade == 10)
+                    { finalList.Add(P); }
+                    if ((bool)EleventhGradeCheckBox.IsChecked && P.Grade == 11)
+                    { finalList.Add(P); }
+                    if ((bool)TwelvthGradeCheckBox.IsChecked && P.Grade == 12)
+                    { finalList.Add(P); }
+                }
+                foreach (Person p in finalList.ToList())
+                {
+                    if (!(bool)UnrankedCheckBox.IsChecked)
+                    {
+                        if (p.SumHours < 50) finalList.Remove(p);
+                    }
+                    if (!(bool)CommunityCheckBox.IsChecked)
+                    {
+                        if (p.SumHours >= 50 && p.SumHours < 200) finalList.Remove(p);
+                    }
+                    if (!(bool)ServiceCheckBox.IsChecked)
+                    {
+                        if (p.SumHours >= 200 && p.SumHours < 500) finalList.Remove(p);
+                    }
+                    if (!(bool)AchievementCheckBox.IsChecked)
+                    {
+                        if (p.SumHours >= 500) finalList.Remove(p);
+                    }
+                }
+                AllStudentsDataGrid.ItemsSource = finalList;
+
+
+            }
+        }
+
+        private void AllStudentsDataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if(e.PropertyName == "AllHours")
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            var x = (Person)AllStudentsDataGrid.SelectedItem;
+
+
+            string.Concat(Database.Remove(x.ID));
+            AllStudentsDataGrid.ItemsSource = Database.People();
         }
     }
 }

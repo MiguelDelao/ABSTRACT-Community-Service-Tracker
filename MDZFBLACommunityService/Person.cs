@@ -14,18 +14,27 @@ namespace MDZFBLACommunityService
         public string LastName { get; set; }
         public int ID { get; set; }
         public int Grade { get; set; }
-        public Hours Hours { get; set; }
+        public double SumHours { get; set; }
+        public List<Hours> AllHours { get; set; }
         public Person()
         {
             FirstName = null;
             LastName = null;
             ID = 0;
             Grade = 0;
-            Hours = new Hours();
+        }
 
+        public Person(string fir,string las,int grad,Hours h)
+        {
+            AllHours = new List<Hours>();
+            FirstName = fir;
+            LastName = las;
+            ID = Database.GenerateID();
+            Grade = grad;
+            AllHours.Add(h);
+            SumHours = AllHours.Sum(Hours => Hours.Hour);
 
         }
-       
 
         public Person(string a, string b, int c, int d, double e, DateTime f)
         {
@@ -42,8 +51,6 @@ namespace MDZFBLACommunityService
             LastName = las;
             ID = i;
             Grade = grad;
-            Hours = new Hours();
-            Hours.AddEvent(hour, even);
             
         }
         public Person(string fir, string las, int grad, double hour)
@@ -55,7 +62,15 @@ namespace MDZFBLACommunityService
         }
         public override string ToString()
         {
-            return (FirstName + LastName + ID + Grade );
+            return (FirstName + LastName + ID + Grade +SumHours+AllHours);
         }
+
+
+        public void AddHours(Hours h)
+        {
+            AllHours.Add(h);
+            SumHours = AllHours.Sum(Hours => Hours.Hour);
+        }
+       
     }
 }

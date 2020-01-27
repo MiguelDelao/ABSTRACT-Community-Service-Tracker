@@ -90,7 +90,7 @@ namespace MDZFBLACommunityService
             }
             return names;
         }
-        public static Person FindByName(string fnam,string lnam)
+        public static Person FindByName(string fnam, string lnam)
         {
             using (var db = new LiteDatabase("..\\mydata.db"))
             {
@@ -104,6 +104,15 @@ namespace MDZFBLACommunityService
 
             }
         }
+        public static bool Remove(int pepid)
+        {
+            using (var db = new LiteDatabase("..\\MyData.db"))
+            {
+                var coll = db.GetCollection<Person>("people");
+                
+                return (coll.Delete(pepid));
 
+            }
+        }
     }
 }

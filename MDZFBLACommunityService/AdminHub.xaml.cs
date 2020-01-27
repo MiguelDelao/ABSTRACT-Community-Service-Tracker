@@ -22,6 +22,7 @@ namespace MDZFBLACommunityService
     {
         
         public static string ppp;
+        
         public AdminHub()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace MDZFBLACommunityService
             testlabel.Content = ppp;
        
         }
-
+        
         
 
 

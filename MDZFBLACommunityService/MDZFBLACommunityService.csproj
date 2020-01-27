@@ -88,6 +88,9 @@
       <DependentUpon>PASelectPerson.xaml</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
+    <Compile Include="PSAddHours.xaml.cs">
+      <DependentUpon>PSAddHours.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
@@ -124,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PASelectPerson.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PSAddHours.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
