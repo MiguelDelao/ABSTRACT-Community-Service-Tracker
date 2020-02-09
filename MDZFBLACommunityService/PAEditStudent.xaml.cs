@@ -26,7 +26,7 @@ namespace MDZFBLACommunityService
             InitializeComponent();
             selectedStudentComboBox.ItemsSource = Database.Names();
             pep = null;
-
+            
 
         }
 
@@ -45,7 +45,7 @@ namespace MDZFBLACommunityService
             var h = (Hours)StudentListBox.SelectedItem;
             CalendarBox.SelectedDate = h.Date;
             HoursTextbox.Text = string.Concat(h.Hour);
-
+            EventNameTextBox.Text = string.Concat(h.Event);
 
         }
 
@@ -77,23 +77,22 @@ namespace MDZFBLACommunityService
                 pep.AddHours(h);
                 Database.Update(pep);
                 StudentListBox.ItemsSource = pep.AllHours;
-                
+                StudentListBox.Items.Refresh();
                 
             }
             catch
             {
-
+                MessageBox.Show("Error");
             }
             
         }
 
-        //private void SelectStudentIDButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    pep = Database.FindByID(int.Parse(IDTextBox.Text));
-        //    StudentListBox.ItemsSource = pep.HoursToString();
-        //    FnameLabel.Content = pep.FirstName;
-        //    LNameLabel.Content = pep.LastName;
-        //    IDLabel.Content = pep.ID;
-        //}
+        private void EventNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        //Histogram grade levels average
+        //
     }
 }

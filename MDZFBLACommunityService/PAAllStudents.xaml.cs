@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LiteDB;
+using Mairegger.Printing;
+
+
 
 namespace MDZFBLACommunityService
 {
@@ -31,7 +35,7 @@ namespace MDZFBLACommunityService
         {
             using (var db = new LiteDatabase("//mydata.db"))
                 AllStudentsDataGrid.ItemsSource = Database.People();
-           
+            
         }
 
         private void AllStudentsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -44,6 +48,10 @@ namespace MDZFBLACommunityService
                 GradeComboBox.Text = string.Concat(selected.Grade);
                 //hoursTextBox.Text = string.Concat(selected.Hours);
                 IDTextbox.Text = string.Concat(selected.ID);
+
+                
+
+
             }
             catch
             {
@@ -141,11 +149,61 @@ namespace MDZFBLACommunityService
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            var x = (Person)AllStudentsDataGrid.SelectedItem;
 
+            try
+            {
+                
 
-            string.Concat(Database.Remove(x.ID));
-            AllStudentsDataGrid.ItemsSource = Database.People();
+                MessageBoxResult result = MessageBox.Show("Are you sure?","",MessageBoxButton.YesNo);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        var x = (Person)AllStudentsDataGrid.SelectedItem;
+                        string.Concat(Database.Remove(x.ID));
+                        AllStudentsDataGrid.ItemsSource = Database.People();
+                        break;
+                    case MessageBoxResult.No:
+                        //MessageBox.Show("ok");
+                        break;
+                }
+
+            }
+
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("No option selected");
+            }
+
         }
+
+        private void Print_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            //HelpWindow oj = new HelpWindow();
+            //oj.Show();
+
+
+            //try
+            //{
+            //    HelpWindow oj = new HelpWindow();
+            //    oj.Show();
+            //}
+            //catch
+            //{
+
+            //}
+            var printDialog = new PrintDialog();
+
+            Size pageSize = new Size(printDialog.PrintableAreaWidth, printDialog.PrintableAreaHeight);
+
+            CustomDataGridDocumentPaginator Pageinator = new CustomDataGridDocumentPaginator(AllStudentsDataGrid, "Printing", pageSize, new Thickness(30, 20, 30, 20));
+            printDialog.PrintDocument(Pageinator, "Grid");
+
+
+
+        }
+
     }
+
 }

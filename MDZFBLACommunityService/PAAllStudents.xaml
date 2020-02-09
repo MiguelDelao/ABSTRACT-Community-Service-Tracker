@@ -6,12 +6,11 @@
       xmlns:local="clr-namespace:MDZFBLACommunityService"
       mc:Ignorable="d" 
       d:DesignHeight="613" d:DesignWidth="940"
+      
       Title="AdminAllPeople" Loaded="Page_Loaded">
 
     <Grid Background="Black" Width="948" Height="644">
         <Rectangle Fill="#FF3E3E49" HorizontalAlignment="Left" Height="35" Margin="17,325,0,0" Stroke="Black" VerticalAlignment="Top" Width="137" RadiusY="4.033" RadiusX="4.033"/>
-
-        <DataGrid CanUserAddRows="False" AutoGeneratingColumn="AllStudentsDataGrid_AutoGeneratingColumn" IsReadOnly="True" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" x:Name="AllStudentsDataGrid" HorizontalAlignment="Left" Height="644" Margin="348,0,0,0" VerticalAlignment="Top" Width="600" SelectionChanged="AllStudentsDataGrid_SelectionChanged" Background="#FF303030" GridLinesVisibility="Horizontal" BorderBrush="{x:Null}" Foreground="#FFFBFDFF"/>
         <Button x:Name="updateButton" Content="Update" HorizontalAlignment="Left" Margin="10,226,0,0" VerticalAlignment="Top" Width="86" Click="UpdateButton_Click"/>
         <Expander  Header="&#xD;&#xA;Advanced&#xA;" HorizontalAlignment="Left" Height="336" Margin="7,298,0,0" VerticalAlignment="Top" Width="165" RenderTransformOrigin="0.5,0.5" Foreground="White" Background="{x:Null}" FontWeight="Bold" FontSize="18">
             <Expander.RenderTransform>
@@ -60,6 +59,10 @@
         </Grid>
         <Button x:Name="TestButton" Content="Filter" HorizontalAlignment="Left" Margin="159,328,0,0" VerticalAlignment="Top" Width="75" Click="TestButton_Click"/>
         <Button x:Name="Delete" Content="X" HorizontalAlignment="Left" Margin="284,325,0,0" VerticalAlignment="Top" Width="41" Background="#FFC12020" Click="Delete_Click"/>
+        <Button x:Name="Print" Content="Print" HorizontalAlignment="Left" Margin="344,43,0,0" VerticalAlignment="Top" Width="75" Click="Print_Click"/>
+        <DataGrid CanUserAddRows="False" AutoGeneratingColumn="AllStudentsDataGrid_AutoGeneratingColumn" IsReadOnly="True" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" x:Name="AllStudentsDataGrid" HorizontalAlignment="Left" Height="595" VerticalAlignment="Top" Width="514" SelectionChanged="AllStudentsDataGrid_SelectionChanged" Background="#FF303030" GridLinesVisibility="Horizontal" BorderBrush="{x:Null}" Foreground="#FFFBFDFF" Margin="424,10,0,0"/>
 
+        
+           
     </Grid>
 </Page>

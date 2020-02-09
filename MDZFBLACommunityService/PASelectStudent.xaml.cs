@@ -16,13 +16,15 @@ using System.Windows.Shapes;
 namespace MDZFBLACommunityService
 {
     /// <summary>
-    /// Interaction logic for PASelectPerson.xaml
+    /// Interaction logic for PASelectStudent.xaml
     /// </summary>
-    public partial class PASelectPerson : Page
+    public partial class PASelectStudent : Page
     {
-        public PASelectPerson()
+
+        public PASelectStudent()
         {
             InitializeComponent();
+            selectedStudentComboBox.ItemsSource = Database.Names();
         }
 
         private void SelectedStudentID_TextChanged(object sender, TextChangedEventArgs e)
@@ -34,15 +36,32 @@ namespace MDZFBLACommunityService
         {
             var mw = Application.Current.Windows.Cast<Window>().FirstOrDefault(window => window is AdminHub) as AdminHub;
             Person pp = Database.FindByID(int.Parse(selectedStudentID.Text));
-            mw.FirstNameLabel.Content = pp.FirstName;
-            mw.LastNameLabel.Content = pp.LastName;
-            mw.IDtlabel.Content = pp.ID;
-            
+
+            mw.SelectedStudentLabel.Content = (pp.FirstName + " " + pp.LastName);
+            mw.IDTextBox.Text = string.Concat(pp.ID);
+
         }
 
         private void Testbutt_Click(object sender, RoutedEventArgs e)
         {
-            
+
+        }
+
+        private void SelectStudentButtonByName_Click(object sender, RoutedEventArgs e)
+        {
+            var mw = Application.Current.Windows.Cast<Window>().FirstOrDefault(window => window is AdminHub) as AdminHub;
+            string[] a = selectedStudentComboBox.Text.Split(' ');
+            var pep = Database.FindByName(a[0], a[1]);
+            mw.SelectedStudentLabel.Content = (pep.FirstName + " " + pep.LastName);
+            mw.IDTextBox.Text = string.Concat(pep.ID);
+
+
+        }
+
+        private void NameBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
+

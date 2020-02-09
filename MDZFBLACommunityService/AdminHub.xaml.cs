@@ -20,14 +20,15 @@ namespace MDZFBLACommunityService
     /// </summary>
     public partial class AdminHub : Window
     {
-        
-        public static string ppp;
-        
+
+
+       
         public AdminHub()
         {
             InitializeComponent();
             Database db = new Database();
-            testlabel.Content = ppp;
+            MainFrame.Navigate(new PASelectStudent());
+
        
         }
         
@@ -84,36 +85,58 @@ namespace MDZFBLACommunityService
         {
 
         }
-
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
             main.Show();
             this.Close();
         }
-
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void TestButton_Click(object sender, RoutedEventArgs e)
-        {
-            testlabel.Content = ppp;
-        }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            
+            Person x = Database.FindByID(int.Parse(IDTextBox.Text));
+            if (IDTextBox.Text == "0000") MessageBox.Show("Select Somebody First");
+            else MainFrame.Navigate(new PSAddHours(x));
         }
 
         private void SelectPerson_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new PASelectPerson());
+            MainFrame.Navigate(new PASelectStudent());
+
+            
         }
 
         private void EditStudentButton_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new PAEditStudent());
+
+            
+        }
+
+        private void Statistics_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new PAStatistics());
+        }
+
+        private void RankingButton_Click(object sender, RoutedEventArgs e)
+        {
+            Person x = Database.FindByID(int.Parse(IDTextBox.Text));
+            if (IDTextBox.Text == "0000") MessageBox.Show("Select Somebody First");
+            else MainFrame.Navigate(new PSStudentRanking(x));
+
+        }
+
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
+        {
+            HelpWindow help = new HelpWindow();
+            help.Title = "Help Window";
+            help.Show();
         }
     }
 

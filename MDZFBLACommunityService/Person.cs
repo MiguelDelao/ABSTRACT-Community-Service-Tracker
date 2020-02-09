@@ -62,7 +62,7 @@ namespace MDZFBLACommunityService
         }
         public override string ToString()
         {
-            return (FirstName + LastName + ID + Grade +SumHours+AllHours);
+            return (FirstName + " " + LastName +  ", Grade: " + Grade +  ", " + SumHours + " Hours");
         }
 
 
@@ -71,6 +71,12 @@ namespace MDZFBLACommunityService
             AllHours.Add(h);
             SumHours = AllHours.Sum(Hours => Hours.Hour);
         }
-       
+        public void RemoveHours(Hours h)
+        {
+            AllHours.Remove(h);
+            SumHours = AllHours.Sum(Hours => Hours.Hour);
+        }
+
+
     }
 }
