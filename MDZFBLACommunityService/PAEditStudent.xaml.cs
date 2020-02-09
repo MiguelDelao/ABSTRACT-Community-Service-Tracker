@@ -34,16 +34,16 @@ namespace MDZFBLACommunityService
         {
 
         }
-
         private void NameBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
            
         }
 
+
         private void StudentListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var h = (Hours)StudentListBox.SelectedItem;
-            CalendarBox.SelectedDate = h.Date;
+            CalendarSelecter.SelectedDate = h.Date;
             HoursTextbox.Text = string.Concat(h.Hour);
             EventNameTextBox.Text = string.Concat(h.Event);
 
@@ -55,8 +55,8 @@ namespace MDZFBLACommunityService
             var x = Database.FindByName(a[0], a[1]);
             pep = x;
             StudentListBox.ItemsSource = pep.AllHours;
-            FnameLabel.Content = pep.FirstName;
-            LNameLabel.Content = pep.LastName;
+            FirstNameTextBox.Text = pep.FirstName;
+            LastNameTextBox.Text = pep.LastName;
             IDLabel.Content = pep.ID;
 
         }
@@ -70,7 +70,7 @@ namespace MDZFBLACommunityService
         {
             try
             {
-                DateTime z = CalendarBox.SelectedDate.Value;
+                DateTime z = CalendarSelecter.SelectedDate.Value;
                 string y = HoursTextbox.Text;
                 string x = EventNameTextBox.Text;
                 Hours h = new Hours(double.Parse(y), z, x);
@@ -78,7 +78,7 @@ namespace MDZFBLACommunityService
                 Database.Update(pep);
                 StudentListBox.ItemsSource = pep.AllHours;
                 StudentListBox.Items.Refresh();
-                
+                MessageBox.Show("Updated");
             }
             catch
             {
@@ -92,7 +92,46 @@ namespace MDZFBLACommunityService
 
         }
 
-        //Histogram grade levels average
-        //
+        private void UpdateTextBox_Click(object sender, RoutedEventArgs e)
+        {
+
+            try
+            {
+            pep.FirstName = FirstNameTextBox.Text;
+            pep.LastName = LastNameTextBox.Text;
+            Database.Update(pep);
+            selectedStudentComboBox.ItemsSource = Database.Names();
+            selectedStudentComboBox.Items.Refresh();
+            }
+            catch
+            {
+                MessageBox.Show("Select Somebody First");
+            }
+            
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Are you sure?", "", MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    Hours h = (Hours)StudentListBox.SelectedItem;
+                    pep.RemoveHours(h);
+                    Database.Update(pep);
+                    StudentListBox.ItemsSource = pep.AllHours;
+                    StudentListBox.Items.Refresh();
+                    break;
+                case MessageBoxResult.No:
+                    //MessageBox.Show("ok");
+                    break;
+            }
+
+        }
     }
 }

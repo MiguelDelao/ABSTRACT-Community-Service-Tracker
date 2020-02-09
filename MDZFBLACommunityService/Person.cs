@@ -36,6 +36,18 @@ namespace MDZFBLACommunityService
 
         }
 
+        public Person(string fir, string las, int grad)
+        {
+            AllHours = new List<Hours>();
+            FirstName = fir;
+            LastName = las;
+            ID = Database.GenerateID();
+            Grade = grad;
+            SumHours = AllHours.Sum(Hours => Hours.Hour);
+
+        }
+
+
         public Person(string a, string b, int c, int d, double e, DateTime f)
         {
             FirstName = a;

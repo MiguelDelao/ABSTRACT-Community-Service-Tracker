@@ -6,18 +6,69 @@
         xmlns:local="clr-namespace:MDZFBLACommunityService"
         mc:Ignorable="d"
         
-        Title="HelpWindow" Height="1056" Width="816" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
-    <Grid x:Name="Griddd" HorizontalAlignment="Right" Margin="0,0,-0.4,0.4" Width="810">
-        <Label Content="Help for:" HorizontalAlignment="Left" Margin="17,10,0,0" VerticalAlignment="Top" Background="White" Foreground="#DD000000" FontSize="16" Width="88"/>
-        <Label x:Name="HelpLabel" Content="HelpLabel" HorizontalAlignment="Left" Margin="85,10,0,0" VerticalAlignment="Top" Background="White" Foreground="#DD000000" FontSize="16" Width="251"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="12" Margin="467,925,0,0" Stroke="Black" VerticalAlignment="Top" Width="0"/>
-        <ListView x:Name="blo" HorizontalAlignment="Left" Height="125" Margin="17,200,0,0" VerticalAlignment="Top" Width="251" Foreground="Black" Background="White" FontSize="12" Padding="-2,0,0,0" BorderThickness="1" BorderBrush="Black">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="AdminHub" Height="495" Width="878" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+    <Grid Background="#FF1F1F1F">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+
+
+
+        </Grid.ColumnDefinitions>
+
+        <Menu HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="145"  Background="White" Foreground="Black" >
+            <MenuItem Header="_Options" Height="31">
+                <MenuItem Header="_Help" Click="Help_Click" />
+                <MenuItem Header="_Prefrences" Click="Prefrences_Click"/>
+                <MenuItem Header="_Logout" Click="Logout_Click" />
+                <Separator />
+                <MenuItem Header="_Exit" Click="Exit_Click"/>
+            </MenuItem>
+
+        </Menu>
+        <Rectangle MouseDown="Rectangle_MouseDown" Fill="White" HorizontalAlignment="Left" Height="31" Margin="138,0,0,0" VerticalAlignment="Top" Width="740"/>
+        <Button Content="X" x:Name="close" HorizontalAlignment="Left" Margin="829.7,0,0,464" VerticalAlignment="Bottom" Width="48.3" Height="31" BorderThickness="0" UseLayoutRounding="False" Click="Close_Click" Background="{x:Null}" BorderBrush="Black" Foreground="#DDFF0000" FontSize="18" />
+        <TabControl HorizontalAlignment="Left" Height="435" Margin="10,50,0,0" VerticalAlignment="Top" Width="858" FontSize="14">
+            <TabItem Header="General " Background="#FF5BF0C7">
+                <Grid Background="White">
+                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="386" Width="832"><Run Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales euismod lacus a rhoncus. Fusce feugiat condimentum tellus, eget hendrerit turpis vestibulum nec. Integer nibh massa, condimentum non finibus eu, commodo at felis. In nec vehicula massa. Sed nec ultricies justo, a pellentesque enim. Aliquam nec dolor lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas vehicula interdum nibh id porttitor. Duis faucibus egestas sodales. Mauris interdum, tellus et ultrices consequat, arcu dui lacinia arcu, non ultrices sem ex a urna."/><LineBreak/><Run/><LineBreak/><Run Text="Vivamus vel mauris nisi. Mauris varius, nunc at ullamcorper malesuada, risus velit feugiat tellus, at sagittis risus arcu non lorem. Nunc mattis, orci sed maximus tincidunt, ligula nunc efficitur dolor, nec varius sem ex ac sapien. Duis consequat, nunc eu porttitor posuere, sapien orci convallis diam, id cursus arcu est convallis elit. Suspendisse elementum finibus diam, eget mollis sem dictum eget. Curabitur aliquam quam condimentum enim faucibus, sit amet aliquam libero cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec lobortis at purus in convallis. Morbi dapibus lacus ante, at pulvinar elit ullamcorper ut. Nunc aliquam sem eros, ac molestie risus imperdiet quis. Sed finibus risus non arcu ultricies porta. Integer cursus euismod posuere. Cras dignissim eros et lorem vulputate consequat. Donec sodales finibus nibh id aliquam."/><LineBreak/><Run/><LineBreak/><Run Text="Nam efficitur ante euismod est semper sollicitudin. Sed sodales massa cursus ante congue porta. Fusce leo mauris, vehicula ut faucibus vitae, suscipit at ipsum. Praesent et augue neque. Nulla dapibus orci justo. Maecenas vulputate nunc non massa laoreet varius. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."/><LineBreak/><Run/><LineBreak/><Run Text="Sed dignissim finibus tempus. Morbi suscipit, neque eu elementum interdum, dui leo interdum nibh, vitae pharetra enim tortor quis mauris. Aenean dolor turpis, porta id urna vitae, laoreet finibus urna. Duis quis nisi eget ex euismod mattis. Suspendisse vitae scelerisque nibh, vitae dignissim arcu. Vestibulum quis magna vel magna ultricies fringilla vel vel purus. Sed hendrerit, metus ac fermentum pretium, purus sapien tristique massa, ut porttitor justo nisl non magna."/></TextBlock>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Admin Help">
+                <Grid Background="#FF7ECBC7">
+                    <Rectangle Fill="White" HorizontalAlignment="Left" Height="334" Margin="20,49,0,0" VerticalAlignment="Top" Width="403" RadiusY="21" RadiusX="21"/>
+                    <Label Content="All Students" HorizontalAlignment="Left" Margin="163,17,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="16"/>
+                    <Label Content="Create Student" HorizontalAlignment="Left" Margin="469,197,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="16"/>
+                    <Rectangle Fill="White" HorizontalAlignment="Left" Height="154" Margin="428,229,0,0" VerticalAlignment="Top" Width="199" RadiusY="21" RadiusX="21"/>
+                    <Rectangle Fill="White" HorizontalAlignment="Left" Height="143" Margin="428,49,0,0" VerticalAlignment="Top" Width="199" RadiusY="21" RadiusX="21"/>
+                    <Label Content="Statistics" HorizontalAlignment="Left" Margin="494,17,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="16"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="29,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="312" Width="385"><Run Text="GENERAL"/><LineBreak/><Run Text="This tab gives you a list of all the students in the database in the form of a data grid. You can edit people as well by selecting them and the text boxes fill in with that persons info. "/><LineBreak/><Run/><LineBreak/><Run Text="FILTER"/><LineBreak/><Run Text="Under the filter expander you can filter the data grid to whatever you want. For example, if you just want to see just 9th graders that have the community award, then you can do so there. "/><LineBreak/><Run/><LineBreak/><Run Text="PRINT"/><LineBreak/><Run Text="Clicking the print button generates a PDF with all the information  in the data grid. If the data grid is filtered, it will generate the report with just the filtered data."/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="437,238,0,0" TextWrapping="Wrap" Text="This is where you create new students. You can choose to only create a student, or add the event that they participated in. " VerticalAlignment="Top" Height="95" Width="181"/>
+                    <Rectangle Fill="White" HorizontalAlignment="Left" Height="333" Margin="635,50,0,0" VerticalAlignment="Top" Width="199" RadiusY="21" RadiusX="21"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="644,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="312" Width="181"><Run Text="This is where you can see the individual events from a student."/><LineBreak/><Run/><LineBreak/><Run Text="SELECT STUDENT"/><LineBreak/><Run Text="There is where you can select the student to see individual events"/><LineBreak/><Run/><LineBreak/><Run Text="CREATE NEW EVENT"/><LineBreak/><Run Text="This is where you can "/></TextBlock>
+                    <Label Content="Edit Student" HorizontalAlignment="Left" Margin="684,18,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="16"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="437,59,0,0" TextWrapping="Wrap" Text="Here you can see all sorts data on the students, like average hours per award, the top and bottom 5 students, and average per grade." VerticalAlignment="Top" Height="121" Width="181"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Student Help">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
 
     </Grid>
 </Window>

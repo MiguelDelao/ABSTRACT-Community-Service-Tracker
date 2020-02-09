@@ -27,7 +27,6 @@ namespace MDZFBLACommunityService
             
             
 
-            blo.ItemsSource = Database.People();
 
 
 
@@ -48,16 +47,36 @@ namespace MDZFBLACommunityService
             }
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Help_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Datgrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Prefrences_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-       
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                DragMove();
+        }
+
     }
 }

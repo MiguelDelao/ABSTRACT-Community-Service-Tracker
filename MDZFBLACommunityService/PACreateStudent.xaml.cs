@@ -27,12 +27,22 @@ namespace MDZFBLACommunityService
 
         private void Create_Person_Click(object sender, RoutedEventArgs e)
         {
-            Hours hour = new Hours(double.Parse(HoursTextBox.Text), DateTime.Now, EventTextBox.Text);
+            
             try
             {
-                Person temporary = new Person(firstNameTextBox.Text, lastNameTextBox.Text,
-                    int.Parse(GradeComboBox.Text), hour);
-                Database.Insert(temporary);
+                
+
+                if (EventTextBox.Text == "" && HoursTextBox.Text == "")
+                {Person temporary = new Person(firstNameTextBox.Text, lastNameTextBox.Text, int.Parse(GradeComboBox.Text)); Database.Insert(temporary);}
+                else
+                {
+                    Hours hour = new Hours(double.Parse(HoursTextBox.Text), DateTime.Now, EventTextBox.Text);
+                    Person temporary = new Person(firstNameTextBox.Text, lastNameTextBox.Text, int.Parse(GradeComboBox.Text),hour);
+                    Database.Insert(temporary);
+
+                }
+
+                
             }
             catch(System.FormatException)
             {

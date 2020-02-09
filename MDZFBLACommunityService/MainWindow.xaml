@@ -13,8 +13,9 @@
             <Label  Content="Username" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Foreground="#DD000000"/>
             <Label Content="Password/ID&#xA;" HorizontalAlignment="Left" Margin="0,35,0,0" VerticalAlignment="Top" Foreground="#DD000000" Height="30" Width="76"/>
             <PasswordBox x:Name="PasswordTextBox" Keyboard.KeyDown="PasswordTextBox_KeyDown" HorizontalAlignment="Left" Margin="75,35,0,0" VerticalAlignment="Top" Width="194" BorderBrush="Black"/>
-            <Button x:Name="True" Content="Button" HorizontalAlignment="Left" Margin="81,265,0,0" VerticalAlignment="Top" Width="140" Height="53" Click="True_Click"/>
+            <Button x:Name="True" Content="Submit" HorizontalAlignment="Left" Margin="81,265,0,0" VerticalAlignment="Top" Width="140" Height="53" Click="True_Click"/>
         </Grid>
-        <Button x:Name="AdminSkip" Content="Adminskip" HorizontalAlignment="Left" Margin="265,593,0,0" VerticalAlignment="Top" Width="119" Click="AdminSkip_Click"/>
+        <Button x:Name="AdminSkip" Content="Adminskip" HorizontalAlignment="Left" Margin="286,593,-11,0" VerticalAlignment="Top" Width="119" Click="AdminSkip_Click"/>
+        <Button x:Name="StudentSkip" Content="StudentSkip" HorizontalAlignment="Left" Margin="-20,593,0,0" VerticalAlignment="Top" Width="119" Click="StudentSkip_Click"/>
     </Grid>
 </Window>

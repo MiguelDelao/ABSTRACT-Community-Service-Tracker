@@ -8,7 +8,7 @@
       d:DesignHeight="613" d:DesignWidth="940"
       Title="PSAddHours">
 
-    <Grid Background="#FF565656">
+    <Grid Background="#FF1B1B1B">
         <Calendar x:Name="CalendarBox" HorizontalAlignment="Left" Margin="28,62,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="HoursTextbox" HorizontalAlignment="Left" Height="28" Margin="364,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" TextChanged="HoursTextbox_TextChanged"/>
         <Label Content="Hours" HorizontalAlignment="Left" Margin="314,72,0,0" VerticalAlignment="Top" FontSize="14"/>

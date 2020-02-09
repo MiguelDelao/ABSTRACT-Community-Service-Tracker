@@ -95,5 +95,13 @@ namespace MDZFBLACommunityService
         {
             if (e.Key == Key.Enter) Login(UsernameTextBox.Text, PasswordTextBox.Password);
         }
+
+        private void StudentSkip_Click(object sender, RoutedEventArgs e)
+        {
+            Person log = Database.FindByID(9430);
+            StudentHub st = new StudentHub(log);
+            st.Show();
+            this.Close();
+        }
     }
 }

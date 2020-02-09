@@ -115,9 +115,11 @@
     <Compile Include="PSStudentRanking.xaml.cs">
       <DependentUpon>PSStudentRanking.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Statistics.cs" />
     <Compile Include="StudentHub.xaml.cs">
       <DependentUpon>StudentHub.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentView.xaml.cs">
+      <DependentUpon>StudentView.xaml</DependentUpon>
     </Compile>
     <Page Include="HelpWindow.xaml">
       <SubType>Designer</SubType>
@@ -168,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StudentHub.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

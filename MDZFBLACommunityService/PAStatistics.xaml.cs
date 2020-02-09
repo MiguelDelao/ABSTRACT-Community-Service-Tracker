@@ -27,16 +27,29 @@ namespace MDZFBLACommunityService
 
         public PAStatistics()
         {
-            var peple = Database.People();
+            
             InitializeComponent();
+
+            var peple = Database.People();
             var b = peple.OrderByDescending(c => c.SumHours);
             var o = peple.OrderBy(c => c.SumHours);
+
             TopFiveStudentsListBox.ItemsSource = b.ToList().GetRange(0, 5);
             LastFiveStudentsListBox.ItemsSource = o.ToList().GetRange(0, 5);
+
+
+            MakeModel();
+            LabelAwards();
+            
+        }
+
+
+
+        public void MakeModel()
+        {
+            var peple = Database.People();
             plt = new PlotModel();
             plt.Title = "Average Hours Per Grade";
-
-
 
             double nine = peple.Where(fc => fc.Grade == 9).Select(gh => gh.SumHours).Average();
             double ten = peple.Where(fc => fc.Grade == 10).Select(gh => gh.SumHours).Average();
@@ -56,7 +69,7 @@ namespace MDZFBLACommunityService
             barser.Items.Add(new ColumnItem { Value = ten, Color = OxyColor.Parse("#7EBDC3") });
             barser.Items.Add(new ColumnItem { Value = eleven, Color = OxyColor.Parse("#D8E4FF") });
             barser.Items.Add(new ColumnItem { Value = twelve, Color = OxyColor.Parse("#31E981") });
-            
+
             plt.Axes.Add(new CategoryAxis
             {
                 Position = AxisPosition.Bottom,
@@ -65,20 +78,50 @@ namespace MDZFBLACommunityService
                 IsZoomEnabled = false,
                 Selectable = false,
             });
-            
 
         }
+
+       
 
 
 
         private void TopFiveStudentsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-        }
 
+        }
         private void LastFiveStudentsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
+
+        public void LabelAwards()
+        {
+            var peple = Database.People();
+            var unranked = peple.Where(fc => fc.SumHours < 50).Select(gh => gh.SumHours);
+            var community = peple.Where(fc => fc.SumHours >= 50 && fc.SumHours < 200).Select(gh => gh.SumHours);
+            var service = peple.Where(fc => fc.SumHours >= 200 && fc.SumHours < 500).Select(gh => gh.SumHours);
+            var achievement = peple.Where(fc => fc.SumHours >= 500).Select(gh => gh.SumHours);
+
+            AmountUnrankedLabel.Content = unranked.Count();
+            AverageUnrankedLabel.Content = unranked.Average();
+
+            AmountCommunityLabel.Content = community.Count();
+            AverageCommunityLabel.Content = community.Average();
+
+            AmountServiceLabel.Content = service.Count();
+            AverageServiceLabel.Content = service.Average();
+
+            AmountAchievementLabel.Content = achievement.Count();
+            AverageAchievementLabel.Content = achievement.Average();
+
+            var ad = peple.Select(g => g.SumHours);
+
+            TotalStudents.Content = ad.Count();
+            TotalAverage.Content = ad.Average();
+
+        }
+
+
+
     }
 }

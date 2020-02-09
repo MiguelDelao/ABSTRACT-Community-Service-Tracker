@@ -114,6 +114,8 @@ namespace MDZFBLACommunityService
 
         private void EditStudentButton_Click(object sender, RoutedEventArgs e)
         {
+            var p = Database.FindByID(int.Parse(IDTextBox.Text));
+
             MainFrame.Navigate(new PAEditStudent());
 
             

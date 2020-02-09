@@ -180,19 +180,6 @@ namespace MDZFBLACommunityService
         {
 
 
-            //HelpWindow oj = new HelpWindow();
-            //oj.Show();
-
-
-            //try
-            //{
-            //    HelpWindow oj = new HelpWindow();
-            //    oj.Show();
-            //}
-            //catch
-            //{
-
-            //}
             var printDialog = new PrintDialog();
 
             Size pageSize = new Size(printDialog.PrintableAreaWidth, printDialog.PrintableAreaHeight);
