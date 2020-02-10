@@ -42,22 +42,35 @@ namespace MDZFBLACommunityService
 
         private void StudentListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var h = (Hours)StudentListBox.SelectedItem;
+            try
+            {
+            var h = (Hours)HoursListView.SelectedItem;
             CalendarSelecter.SelectedDate = h.Date;
             HoursTextbox.Text = string.Concat(h.Hour);
             EventNameTextBox.Text = string.Concat(h.Event);
+            }
+            catch (NullReferenceException) { }
+
 
         }
 
         private void SelectStudentButton_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
             string[] a = selectedStudentComboBox.Text.Split(' ');
-            var x = Database.FindByName(a[0], a[1]);
-            pep = x;
-            StudentListBox.ItemsSource = pep.AllHours;
+            pep = Database.FindByName(a[0], a[1]);
+            HoursListView.ItemsSource = pep.AllHours;
             FirstNameTextBox.Text = pep.FirstName;
             LastNameTextBox.Text = pep.LastName;
             IDLabel.Content = pep.ID;
+            GradeComboBox.Text = string.Concat(pep.Grade);
+                ImageRank();
+            }
+            catch
+            {
+                MessageBox.Show("Make sure someone is selected");
+            }
 
         }
 
@@ -76,13 +89,13 @@ namespace MDZFBLACommunityService
                 Hours h = new Hours(double.Parse(y), z, x);
                 pep.AddHours(h);
                 Database.Update(pep);
-                StudentListBox.ItemsSource = pep.AllHours;
-                StudentListBox.Items.Refresh();
+                HoursListView.ItemsSource = pep.AllHours;
+                HoursListView.Items.Refresh();
                 MessageBox.Show("Updated");
             }
             catch
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Make sure everything is filled out and in the right format");
             }
             
         }
@@ -95,18 +108,19 @@ namespace MDZFBLACommunityService
         private void UpdateTextBox_Click(object sender, RoutedEventArgs e)
         {
 
-            try
-            {
+            if (selectedStudentComboBox.SelectedItem == null) MessageBox.Show("Select Somebody First");
+            else
+            { 
             pep.FirstName = FirstNameTextBox.Text;
             pep.LastName = LastNameTextBox.Text;
+            pep.Grade = int.Parse(GradeComboBox.Text);
             Database.Update(pep);
             selectedStudentComboBox.ItemsSource = Database.Names();
             selectedStudentComboBox.Items.Refresh();
+                MessageBox.Show("Updated");
+
             }
-            catch
-            {
-                MessageBox.Show("Select Somebody First");
-            }
+            
             
         }
 
@@ -121,17 +135,38 @@ namespace MDZFBLACommunityService
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    Hours h = (Hours)StudentListBox.SelectedItem;
+                    try
+                    {
+                    Hours h = (Hours)HoursListView.SelectedItem;
                     pep.RemoveHours(h);
                     Database.Update(pep);
-                    StudentListBox.ItemsSource = pep.AllHours;
-                    StudentListBox.Items.Refresh();
+                    HoursListView.ItemsSource = pep.AllHours;
+                    HoursListView.Items.Refresh();
+                    
+                    }
+                    catch { MessageBox.Show("No one is selected"); }
                     break;
                 case MessageBoxResult.No:
-                    //MessageBox.Show("ok");
                     break;
             }
 
         }
+
+        private void Listviewtest_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        public void ImageRank()
+        {
+            if (pep.SumHours < 50) { RankLabel.Content = "Unranked"; RankImage.Source = new BitmapImage(new Uri("resources\\UnrankedStar.png", UriKind.Relative)); }
+            if (pep.SumHours >= 50 && pep.SumHours <= 200) { RankLabel.Content = "Community"; RankImage.Source = new BitmapImage(new Uri("resources\\CommunityStar.png", UriKind.Relative)); }
+            if (pep.SumHours >= 200 && pep.SumHours <= 500) { RankLabel.Content = "Service"; RankImage.Source = new BitmapImage(new Uri("resources\\ServiceStar.png", UriKind.Relative)); }
+            if (pep.SumHours >= 500) { RankLabel.Content = "Achievement"; RankImage.Source = new BitmapImage(new Uri("resources\\AchievementStar.png", UriKind.Relative)); }
+            var b = Database.People().OrderByDescending(c => c.SumHours).ToList();
+            int num = b.FindIndex(po => po.ID == pep.ID) + 1;
+            StudentPlacingLabel.Content = ("#" + num);
+        }
+
+
     }
 }

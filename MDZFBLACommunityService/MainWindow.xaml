@@ -7,15 +7,17 @@
         mc:Ignorable="d" ResizeMode="NoResize"
         Title="MainWindow" Height="675" Width="400" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Image Source="/resources/LogowName.png" Height="220" Margin="45,0,65,426" x:Name="Logo" Width="284" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Grid HorizontalAlignment="Left" Height="358" Margin="45,230,0,0" VerticalAlignment="Top" Width="301">
+        <Image Source="/resources/Logo.png" Height="175" Margin="116,42,130.6,428.6" x:Name="Logo" Width="147" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Grid HorizontalAlignment="Left" Height="327" Margin="45,261,0,0" VerticalAlignment="Top" Width="301">
             <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Left" Height="30" Margin="75,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" BorderBrush="Black"/>
             <Label  Content="Username" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Foreground="#DD000000"/>
             <Label Content="Password/ID&#xA;" HorizontalAlignment="Left" Margin="0,35,0,0" VerticalAlignment="Top" Foreground="#DD000000" Height="30" Width="76"/>
             <PasswordBox x:Name="PasswordTextBox" Keyboard.KeyDown="PasswordTextBox_KeyDown" HorizontalAlignment="Left" Margin="75,35,0,0" VerticalAlignment="Top" Width="194" BorderBrush="Black"/>
-            <Button x:Name="True" Content="Submit" HorizontalAlignment="Left" Margin="81,265,0,0" VerticalAlignment="Top" Width="140" Height="53" Click="True_Click"/>
+            <Button x:Name="True" Content="Submit" HorizontalAlignment="Left" Margin="75,219,0,0" VerticalAlignment="Top" Width="140" Height="53" Click="True_Click"/>
         </Grid>
         <Button x:Name="AdminSkip" Content="Adminskip" HorizontalAlignment="Left" Margin="286,593,-11,0" VerticalAlignment="Top" Width="119" Click="AdminSkip_Click"/>
         <Button x:Name="StudentSkip" Content="StudentSkip" HorizontalAlignment="Left" Margin="-20,593,0,0" VerticalAlignment="Top" Width="119" Click="StudentSkip_Click"/>
+        <Label Content="ABSTRACT" HorizontalAlignment="Left" Margin="130,4,0,0" VerticalAlignment="Top" Foreground="#FF63C6F7" FontSize="22" FontWeight="Bold"/>
+        <Label Content="The Community Service Tracker" HorizontalAlignment="Left" Margin="54,217,0,0" VerticalAlignment="Top" Foreground="#FF63C6F7" FontSize="18" FontWeight="Bold"/>
     </Grid>
 </Window>

@@ -9,10 +9,15 @@
       
       Title="AdminAllPeople" Loaded="Page_Loaded">
 
-    <Grid Background="Black" Width="948" Height="644">
+    <Grid Width="948" Height="644">
+        <GroupBox Header="Edit Selected Student" HorizontalAlignment="Left" Height="212" Margin="24,34,0,0" VerticalAlignment="Top" Width="258"/>
+
+
+
+
         <Rectangle Fill="#FF3E3E49" HorizontalAlignment="Left" Height="35" Margin="17,325,0,0" Stroke="Black" VerticalAlignment="Top" Width="137" RadiusY="4.033" RadiusX="4.033"/>
-        <Button x:Name="updateButton" Content="Update" HorizontalAlignment="Left" Margin="10,226,0,0" VerticalAlignment="Top" Width="86" Click="UpdateButton_Click"/>
-        <Expander  Header="&#xD;&#xA;Advanced&#xA;" HorizontalAlignment="Left" Height="336" Margin="7,298,0,0" VerticalAlignment="Top" Width="165" RenderTransformOrigin="0.5,0.5" Foreground="White" Background="{x:Null}" FontWeight="Bold" FontSize="18">
+        <Button x:Name="updateButton" Content="Update" HorizontalAlignment="Left" Margin="30,198,0,0" VerticalAlignment="Top" Width="86" Click="UpdateButton_Click"/>
+        <Expander  Header="&#xA;Advanced&#xA;" HorizontalAlignment="Left" Height="336" Margin="7,298,0,0" VerticalAlignment="Top" Width="165" RenderTransformOrigin="0.5,0.5" Foreground="White" Background="{x:Null}" FontWeight="Bold" FontSize="18">
             <Expander.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -40,29 +45,30 @@
                 <CheckBox IsChecked="True" x:Name="UnrankedCheckBox" Content="Unranked" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="94" BorderBrush="#FF7C38F5" Foreground="White" FontSize="14"/>
             </StackPanel>
         </Expander>
-        <Grid HorizontalAlignment="Left" Height="157" Margin="10,64,0,0" VerticalAlignment="Top" Width="245">
+        <Grid HorizontalAlignment="Left" Height="158" Margin="24,62,0,0" VerticalAlignment="Top" Width="244">
             <Label Content="First Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" FontSize="14" Height="29" Margin="0,10,0,0"/>
             <TextBox x:Name="firstNameTextBox" HorizontalAlignment="Left"  Height="29" Margin="79,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="White" FontSize="14"/>
             <Label Content="Last Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" FontSize="14" Height="29" Margin="0,39,0,0"/>
             <TextBox x:Name="lastNameTextBox" HorizontalAlignment="Left"  Height="29" Margin="79,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="White" FontSize="14"/>
-            <Label Content="Hours:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" FontSize="14" Height="29" Margin="0,73,0,0"/>
-            <TextBox x:Name="hoursTextBox" HorizontalAlignment="Left"  Height="29" Margin="79,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="White" FontSize="14" Background="{x:Null}" BorderBrush="White"/>
-            <ComboBox x:Name="GradeComboBox" HorizontalAlignment="Left" Margin="79,107,0,0" VerticalAlignment="Top" Width="33" Background="#FF545454" Height="25" Foreground="White" IsEditable="False" >
+            <ComboBox x:Name="GradeComboBox" HorizontalAlignment="Left" Margin="79,73,0,0" VerticalAlignment="Top" Width="33" Background="#FF545454" Height="25" Foreground="White" IsEditable="False" >
                 <ComboBoxItem IsSelected="True" Content="9"/>
                 <ComboBoxItem Content="10" />
                 <ComboBoxItem Content="11" />
                 <ComboBoxItem Content="12" />
             </ComboBox>
-            <Label Content="Grade:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" FontSize="14" Height="29" Margin="0,107,0,0"/>
-            <TextBlock x:Name="IDTextbox"  HorizontalAlignment="Left" Margin="203,131,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Height="16" Foreground="White" Width="32"/>
-            <TextBlock HorizontalAlignment="Left" Margin="185,131,0,0" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Top" Foreground="White"/>
+            <Label Content="Grade:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" FontSize="14" Height="29" Margin="0,73,0,0"/>
+            <TextBlock x:Name="IDTextbox"  HorizontalAlignment="Left" Margin="203,109,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Height="16" Foreground="White" Width="32"/>
+            <TextBlock HorizontalAlignment="Left" Margin="185,109,0,0" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Top" Foreground="White"/>
         </Grid>
         <Button x:Name="TestButton" Content="Filter" HorizontalAlignment="Left" Margin="159,328,0,0" VerticalAlignment="Top" Width="75" Click="TestButton_Click"/>
         <Button x:Name="Delete" Content="X" HorizontalAlignment="Left" Margin="284,325,0,0" VerticalAlignment="Top" Width="41" Background="#FFC12020" Click="Delete_Click"/>
-        <Button x:Name="Print" Content="Print" HorizontalAlignment="Left" Margin="344,43,0,0" VerticalAlignment="Top" Width="75" Click="Print_Click"/>
-        <DataGrid CanUserAddRows="False" AutoGeneratingColumn="AllStudentsDataGrid_AutoGeneratingColumn" IsReadOnly="True" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" x:Name="AllStudentsDataGrid" HorizontalAlignment="Left" Height="595" VerticalAlignment="Top" Width="514" SelectionChanged="AllStudentsDataGrid_SelectionChanged" Background="#FF303030" GridLinesVisibility="Horizontal" BorderBrush="{x:Null}" Foreground="#FFFBFDFF" Margin="424,10,0,0"/>
+        <Button x:Name="Print" Content="Print" HorizontalAlignment="Left" Margin="370,573,0,0" VerticalAlignment="Top" Width="75" Click="Print_Click"/>
+        <DataGrid CanUserAddRows="False" AutoGeneratingColumn="AllStudentsDataGrid_AutoGeneratingColumn" IsReadOnly="True" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" 
+                  x:Name="AllStudentsDataGrid" HorizontalAlignment="Left" Height="595" VerticalAlignment="Top" Width="488" SelectionChanged="AllStudentsDataGrid_SelectionChanged" Background="#FF303030" 
+                  GridLinesVisibility="Horizontal" BorderBrush="{x:Null}" Foreground="#FFFBFDFF" Margin="450,10,0,0"/>
 
-        
-           
+
+
+
     </Grid>
 </Page>

@@ -9,6 +9,8 @@
       Title="PASelectStudent">
 
     <Grid>
+        <GroupBox Header="Select Student" HorizontalAlignment="Left" Height="344" Margin="336,60,0,0" VerticalAlignment="Top" Width="196" FontSize="14"/>
+
         <Label Content="Select with ID" HorizontalAlignment="Left" Margin="359,261,0,0" VerticalAlignment="Top" Width="120" FontSize="16"/>
         <TextBox x:Name="selectedStudentID" HorizontalAlignment="Left" Height="31" Margin="359,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="White" TextChanged="SelectedStudentID_TextChanged"/>
         <Button x:Name="SelectStudentButton" Content="Select" HorizontalAlignment="Left" Margin="364,345,0,0" VerticalAlignment="Top" Width="74" Click="SelectStudentButton_Click"/>

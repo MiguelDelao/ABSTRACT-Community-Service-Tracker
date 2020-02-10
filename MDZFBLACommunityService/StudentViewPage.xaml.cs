@@ -10,58 +10,29 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MDZFBLACommunityService
 {
     /// <summary>
-    /// Interaction logic for StudentView.xaml
+    /// Interaction logic for StudentViewPage.xaml
     /// </summary>
-    public partial class StudentView : Window
+    public partial class StudentViewPage : Page
     {
         private Person pep;
-        public StudentView(object pe)
+        public StudentViewPage(object p)
         {
             InitializeComponent();
-            pep = (Person)pe;
+            pep = (Person)p;
+
             HoursListView.ItemsSource = pep.AllHours;
 
             NameLabel.Content = pep.FirstName + " " + pep.LastName;
 
             ImageRank();
-
         }
 
-
-        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ChangedButton == MouseButton.Left)
-                DragMove();
-        }
-
-        private void Help_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Logout_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow main = new MainWindow();
-            main.Show();
-            Close();
-        }
-        private void Exit_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void Close_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
         private void Listviewtest_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -69,14 +40,17 @@ namespace MDZFBLACommunityService
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
             pep.AddHours(new Hours(double.Parse(HoursTextbox.Text), CalendarSelecter.SelectedDate.Value, EventNameTextBox.Text));
             Database.Update(pep);
             HoursListView.ItemsSource = pep.AllHours;
             HoursListView.Items.Refresh();
-        }
-
-        private void EventNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
+            }
+            catch
+            {
+                MessageBox.Show("Make sure everything is filled out");
+            }
 
         }
 
@@ -95,7 +69,15 @@ namespace MDZFBLACommunityService
                 case MessageBoxResult.No:
                     break;
             }
+        }
 
+        private void EventNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void HoursTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
 
@@ -109,5 +91,6 @@ namespace MDZFBLACommunityService
             int num = b.FindIndex(po => po.ID == pep.ID) + 1;
             StudentPlacingLabel.Content = ("#" + num);
         }
+
     }
 }

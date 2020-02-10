@@ -28,11 +28,13 @@ namespace MDZFBLACommunityService
         private void Create_Person_Click(object sender, RoutedEventArgs e)
         {
             
+                
+            
             try
             {
-                
 
-                if (EventTextBox.Text == "" && HoursTextBox.Text == "")
+                if (firstNameTextBox.Text == "" || lastNameTextBox.Text == "") MessageBox.Show("Make sure everything is filled out");
+                else if (EventTextBox.Text == "" && HoursTextBox.Text == "")
                 {Person temporary = new Person(firstNameTextBox.Text, lastNameTextBox.Text, int.Parse(GradeComboBox.Text)); Database.Insert(temporary);}
                 else
                 {
@@ -44,9 +46,9 @@ namespace MDZFBLACommunityService
 
                 
             }
-            catch(System.FormatException)
+            catch
             {
-                MessageBox.Show("Please make sure everything is filled out, and make sure its in the right format");
+                MessageBox.Show("Please make sure everything is filled out and in the right format");
             }
             
             

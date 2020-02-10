@@ -75,8 +75,9 @@ namespace MDZFBLACommunityService
             }
             else
             {
-                StudentHub st = new StudentHub(log);
-                st.Show();
+                StudentView s = new StudentView(log);
+                
+                s.Show();
                 this.Close();
 
             }
@@ -99,7 +100,7 @@ namespace MDZFBLACommunityService
         private void StudentSkip_Click(object sender, RoutedEventArgs e)
         {
             Person log = Database.FindByID(9430);
-            StudentHub st = new StudentHub(log);
+            StudentView st = new StudentView(log);
             st.Show();
             this.Close();
         }

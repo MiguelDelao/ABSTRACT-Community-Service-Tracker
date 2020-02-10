@@ -35,10 +35,20 @@ namespace MDZFBLACommunityService
         private void SelectStudentButton_Click(object sender, RoutedEventArgs e)
         {
             var mw = Application.Current.Windows.Cast<Window>().FirstOrDefault(window => window is AdminHub) as AdminHub;
-            Person pp = Database.FindByID(int.Parse(selectedStudentID.Text));
+            try
+            {
+                Person pp = Database.FindByID(int.Parse(selectedStudentID.Text));
+                mw.SelectedStudentLabel.Content = (pp.FirstName + " " + pp.LastName);
+                mw.IDTextBox.Text = string.Concat(pp.ID);
+            }
+            catch
+            {
+                MessageBox.Show("Make sure its the right format");
+            }
 
-            mw.SelectedStudentLabel.Content = (pp.FirstName + " " + pp.LastName);
-            mw.IDTextBox.Text = string.Concat(pp.ID);
+            
+
+            
 
         }
 
@@ -49,11 +59,18 @@ namespace MDZFBLACommunityService
 
         private void SelectStudentButtonByName_Click(object sender, RoutedEventArgs e)
         {
-            var mw = Application.Current.Windows.Cast<Window>().FirstOrDefault(window => window is AdminHub) as AdminHub;
-            string[] a = selectedStudentComboBox.Text.Split(' ');
-            var pep = Database.FindByName(a[0], a[1]);
-            mw.SelectedStudentLabel.Content = (pep.FirstName + " " + pep.LastName);
-            mw.IDTextBox.Text = string.Concat(pep.ID);
+            if (selectedStudentComboBox.SelectedItem == null) MessageBox.Show("Make sure someone is selected");
+            else
+            {
+                var mw = Application.Current.Windows.Cast<Window>().FirstOrDefault(window => window is AdminHub) as AdminHub;
+                string[] a = selectedStudentComboBox.Text.Split(' ');
+                var pep = Database.FindByName(a[0], a[1]);
+                mw.SelectedStudentLabel.Content = (pep.FirstName + " " + pep.LastName);
+                mw.IDTextBox.Text = string.Concat(pep.ID);
+            }
+            
+            
+            
 
 
         }

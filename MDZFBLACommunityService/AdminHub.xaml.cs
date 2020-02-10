@@ -78,13 +78,11 @@ namespace MDZFBLACommunityService
 
         private void Help_Click(object sender, RoutedEventArgs e)
         {
+            var help = new HelpWindow();
+            help.Show();
 
         }
 
-        private void Prefrences_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
@@ -97,12 +95,12 @@ namespace MDZFBLACommunityService
         }
 
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        private void StudentView_Click(object sender, RoutedEventArgs e)
         {
             
-            Person x = Database.FindByID(int.Parse(IDTextBox.Text));
-            if (IDTextBox.Text == "0000") MessageBox.Show("Select Somebody First");
-            else MainFrame.Navigate(new PSAddHours(x));
+            Person p = Database.FindByID(int.Parse(IDTextBox.Text));
+            if (IDTextBox.Text == "0000") MessageBox.Show("Make sure to select someone first");
+            else MainFrame.Navigate(new StudentViewPage(p));
         }
 
         private void SelectPerson_Click(object sender, RoutedEventArgs e)
@@ -126,19 +124,19 @@ namespace MDZFBLACommunityService
             MainFrame.Navigate(new PAStatistics());
         }
 
-        private void RankingButton_Click(object sender, RoutedEventArgs e)
-        {
-            Person x = Database.FindByID(int.Parse(IDTextBox.Text));
-            if (IDTextBox.Text == "0000") MessageBox.Show("Select Somebody First");
-            else MainFrame.Navigate(new PSStudentRanking(x));
 
-        }
 
         private void HelpButton_Click(object sender, RoutedEventArgs e)
         {
             HelpWindow help = new HelpWindow();
             help.Title = "Help Window";
             help.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var x = new StudentView(Database.FindByID(9430));
+            x.Show();
         }
     }
 

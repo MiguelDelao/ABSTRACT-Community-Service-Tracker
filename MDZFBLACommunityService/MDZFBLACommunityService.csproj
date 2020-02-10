@@ -109,17 +109,11 @@
       <DependentUpon>PAStatistics.xaml</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
-    <Compile Include="PSAddHours.xaml.cs">
-      <DependentUpon>PSAddHours.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PSStudentRanking.xaml.cs">
-      <DependentUpon>PSStudentRanking.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="StudentHub.xaml.cs">
-      <DependentUpon>StudentHub.xaml</DependentUpon>
-    </Compile>
     <Compile Include="StudentView.xaml.cs">
       <DependentUpon>StudentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentViewPage.xaml.cs">
+      <DependentUpon>StudentViewPage.xaml</DependentUpon>
     </Compile>
     <Page Include="HelpWindow.xaml">
       <SubType>Designer</SubType>
@@ -161,19 +155,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PSAddHours.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PSStudentRanking.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="StudentHub.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="StudentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentViewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

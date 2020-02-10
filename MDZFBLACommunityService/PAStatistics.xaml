@@ -11,31 +11,34 @@
       Title="PAStatistics">
 
     <Grid>
-        <Rectangle Fill="#FF0D1B1D" HorizontalAlignment="Left" Height="522" Margin="584,46,0,0" Stroke="#FFDCA8FF" VerticalAlignment="Top" Width="318" RadiusY="6" RadiusX="6"/>
+
+        <Rectangle Fill="#FF252551" HorizontalAlignment="Left" Height="215" Margin="30,41,0,0" Stroke="Black" VerticalAlignment="Top" Width="437" RadiusY="10.167" RadiusX="10.167"/>
+
+        <Rectangle Fill="#FF252551" HorizontalAlignment="Left" Height="522" Margin="584,46,0,0" Stroke="Black" VerticalAlignment="Top" Width="318" RadiusY="6" RadiusX="6"/>
         <ListBox x:Name="LastFiveStudentsListBox" HorizontalAlignment="Left" Height="160" Margin="602,378,0,0" VerticalAlignment="Top" Width="280" Background="#FF444444" SelectionChanged="LastFiveStudentsListBox_SelectionChanged"/>
         <ListBox x:Name="TopFiveStudentsListBox" HorizontalAlignment="Left" Height="160" Margin="602,120,0,0" VerticalAlignment="Top" Width="282" Background="#FF444444" SelectionChanged="TopFiveStudentsListBox_SelectionChanged"/>
         <Label Content="Top Five Students" HorizontalAlignment="Left" Margin="654,60,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#DDFFFFFF" Width="180"/>
         <Label Content="Bottom Five Students" HorizontalAlignment="Left" Margin="634,324,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#DDFFFFFF" Width="216"/>
         <oxy1:PlotView x:Name="plotview" Margin="56,298,500,34" IsMouseWheelEnabled="False" IsManipulationEnabled="False"/>
-        <Label Content="Amount of Unranked:" HorizontalAlignment="Left" Margin="68,65,0,0" VerticalAlignment="Top" Height="32" Width="160" FontSize="16"/>
-        <Label Content="Amount of Community:" HorizontalAlignment="Left" Margin="56,102,0,0" VerticalAlignment="Top" Height="32" Width="172" FontSize="16"/>
-        <Label Content="Amount of Service:" HorizontalAlignment="Left" Margin="84,138,0,0" VerticalAlignment="Top" Height="32" Width="144" FontSize="16"/>
-        <Label Content="Amount of Achievement:" HorizontalAlignment="Left" Margin="44,172,0,0" VerticalAlignment="Top" Height="32" Width="184" FontSize="16"/>
-        <Label x:Name="AmountUnrankedLabel" Content="0" HorizontalAlignment="Left" Margin="228,65,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
-        <Label x:Name="AmountCommunityLabel" Content="0" HorizontalAlignment="Left" Margin="228,102,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
-        <Label x:Name="AmountServiceLabel" Content="0" HorizontalAlignment="Left" Margin="228,138,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
-        <Label x:Name="AmountAchievementLabel" Content="0" HorizontalAlignment="Left" Margin="228,172,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
-        <Label Content="Average:" HorizontalAlignment="Left" Margin="318,65,0,0" VerticalAlignment="Top" Height="32" Width="72" FontSize="16"/>
-        <Label Content="Average:" HorizontalAlignment="Left" Margin="318,102,0,0" VerticalAlignment="Top" Height="32" Width="72" FontSize="16"/>
-        <Label Content="Average:" HorizontalAlignment="Left" Margin="318,138,0,0" VerticalAlignment="Top" Height="32" Width="72" FontSize="16"/>
-        <Label Content="Average:" HorizontalAlignment="Left" Margin="318,172,0,0" VerticalAlignment="Top" Height="32" Width="72" FontSize="16"/>
-        <Label x:Name="AverageUnrankedLabel" Content="0" HorizontalAlignment="Left" Margin="390,65,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
-        <Label x:Name="AverageCommunityLabel" Content="0" HorizontalAlignment="Left" Margin="390,102,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
-        <Label x:Name="AverageServiceLabel" Content="0" HorizontalAlignment="Left" Margin="390,138,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
-        <Label x:Name="AverageAchievementLabel" Content="0" HorizontalAlignment="Left" Margin="390,172,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
-        <Label Content="Total Students:" HorizontalAlignment="Left" Margin="116,204,0,0" VerticalAlignment="Top" Height="32" Width="112" FontSize="16"/>
-        <Label x:Name="TotalStudents" Content="0" HorizontalAlignment="Left" Margin="228,204,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
-        <Label Content="Total Average:" HorizontalAlignment="Left" Margin="284,204,0,0" VerticalAlignment="Top" Height="32" Width="106" FontSize="16" RenderTransformOrigin="0.5,0.5">
+        <Label Content="Amount of Unranked:" HorizontalAlignment="Left" Margin="92,48,0,0" VerticalAlignment="Top" Height="32" Width="160" FontSize="16"/>
+        <Label Content="Amount of Community:" HorizontalAlignment="Left" Margin="76,99,0,0" VerticalAlignment="Top" Height="32" Width="176" FontSize="16"/>
+        <Label Content="Amount of Service:" HorizontalAlignment="Left" Margin="108,138,0,0" VerticalAlignment="Top" Height="32" Width="144" FontSize="16"/>
+        <Label Content="Amount of Achievement:" HorizontalAlignment="Left" Margin="68,181,0,0" VerticalAlignment="Top" Height="32" Width="184" FontSize="16"/>
+        <Label x:Name="AmountUnrankedLabel" Content="0" HorizontalAlignment="Left" Margin="252,48,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
+        <Label x:Name="AmountCommunityLabel" Content="0" HorizontalAlignment="Left" Margin="252,99,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
+        <Label x:Name="AmountServiceLabel" Content="0" HorizontalAlignment="Left" Margin="252,138,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
+        <Label x:Name="AmountAchievementLabel" Content="0" HorizontalAlignment="Left" Margin="252,181,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
+        <Label Content="Average:" HorizontalAlignment="Left" Margin="342,48,0,0" VerticalAlignment="Top" Height="32" Width="72" FontSize="16"/>
+        <Label Content="Average:" HorizontalAlignment="Left" Margin="342,99,0,0" VerticalAlignment="Top" Height="32" Width="72" FontSize="16"/>
+        <Label Content="Average:" HorizontalAlignment="Left" Margin="342,138,0,0" VerticalAlignment="Top" Height="32" Width="72" FontSize="16"/>
+        <Label Content="Average:" HorizontalAlignment="Left" Margin="342,181,0,0" VerticalAlignment="Top" Height="32" Width="72" FontSize="16"/>
+        <Label x:Name="AverageUnrankedLabel" Content="0" HorizontalAlignment="Left" Margin="414,48,0,0" VerticalAlignment="Top" Height="32" Width="40" FontSize="16"/>
+        <Label x:Name="AverageCommunityLabel" Content="0" HorizontalAlignment="Left" Margin="414,99,0,0" VerticalAlignment="Top" Height="32" Width="40" FontSize="16"/>
+        <Label x:Name="AverageServiceLabel" Content="0" HorizontalAlignment="Left" Margin="414,138,0,0" VerticalAlignment="Top" Height="32" Width="40" FontSize="16"/>
+        <Label x:Name="AverageAchievementLabel" Content="0" HorizontalAlignment="Left" Margin="414,181,0,0" VerticalAlignment="Top" Height="32" Width="40" FontSize="16"/>
+        <Label Content="Total Students:" HorizontalAlignment="Left" Margin="140,223,0,0" VerticalAlignment="Top" Height="32" Width="112" FontSize="16"/>
+        <Label x:Name="TotalStudents" Content="0" HorizontalAlignment="Left" Margin="258,224,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
+        <Label Content="Total Average:" HorizontalAlignment="Left" Margin="314,224,0,0" VerticalAlignment="Top" Height="32" Width="106" FontSize="16" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -45,11 +48,15 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="TotalAverage" Content="0" HorizontalAlignment="Left" Margin="390,204,0,0" VerticalAlignment="Top" Height="32" Width="46" FontSize="16"/>
-        <Image Source="/resources/unrankedstar.png" HorizontalAlignment="Left" Height="32" Margin="10,65,0,0" VerticalAlignment="Top" Width="36"/>
-        <Image Source="/resources/communitystar.png" HorizontalAlignment="Left" Height="32" Margin="10,97,0,0" VerticalAlignment="Top" Width="36"/>
-        <Image Source="/resources/servicestar.png" HorizontalAlignment="Left" Height="32" Margin="10,138,0,0" VerticalAlignment="Top" Width="36"/>
-        <Image Source="/resources/achievementstar.png" HorizontalAlignment="Left" Height="32" Margin="10,172,0,0" VerticalAlignment="Top" Width="36"/>
+        <Label x:Name="TotalAverage" Content="0" HorizontalAlignment="Left" Margin="420,224,0,0" VerticalAlignment="Top" Height="32" Width="34" FontSize="16"/>
+        <Image Source="/resources/unrankedstar.png" HorizontalAlignment="Left" Height="36" Margin="34,46,0,0" VerticalAlignment="Top" Width="37"/>
+        <Image Source="/resources/communitystar.png" HorizontalAlignment="Left" Height="36" Margin="34,92,0,0" VerticalAlignment="Top" Width="37"/>
+        <Image Source="/resources/servicestar.png" HorizontalAlignment="Left" Height="32" Margin="34,138,0,0" VerticalAlignment="Top" Width="36"/>
+        <Image Source="/resources/achievementstar.png" HorizontalAlignment="Left" Height="33" Margin="34,180,0,0" VerticalAlignment="Top" Width="37"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="5" Margin="30,85,0,0" Stroke="Black" VerticalAlignment="Top" Width="437"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="5" Margin="30,131,0,0" Stroke="Black" VerticalAlignment="Top" Width="437"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="5" Margin="30,174,0,0" Stroke="Black" VerticalAlignment="Top" Width="437"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="5" Margin="30,214,0,0" Stroke="Black" VerticalAlignment="Top" Width="437"/>
 
     </Grid>
 

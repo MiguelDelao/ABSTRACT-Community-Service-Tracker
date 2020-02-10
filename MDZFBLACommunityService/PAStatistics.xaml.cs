@@ -103,21 +103,21 @@ namespace MDZFBLACommunityService
             var achievement = peple.Where(fc => fc.SumHours >= 500).Select(gh => gh.SumHours);
 
             AmountUnrankedLabel.Content = unranked.Count();
-            AverageUnrankedLabel.Content = unranked.Average();
+            AverageUnrankedLabel.Content = (int)unranked.Average();
 
             AmountCommunityLabel.Content = community.Count();
-            AverageCommunityLabel.Content = community.Average();
+            AverageCommunityLabel.Content = (int)community.Average();
 
             AmountServiceLabel.Content = service.Count();
-            AverageServiceLabel.Content = service.Average();
+            AverageServiceLabel.Content = (int)service.Average();
 
             AmountAchievementLabel.Content = achievement.Count();
-            AverageAchievementLabel.Content = achievement.Average();
+            AverageAchievementLabel.Content = (int)achievement.Average();
 
             var ad = peple.Select(g => g.SumHours);
 
             TotalStudents.Content = ad.Count();
-            TotalAverage.Content = ad.Average();
+            TotalAverage.Content = (int)ad.Average();
 
         }
 

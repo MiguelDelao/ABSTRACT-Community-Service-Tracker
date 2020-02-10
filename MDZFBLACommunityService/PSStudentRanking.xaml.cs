@@ -30,11 +30,11 @@ namespace MDZFBLACommunityService
             if (pep.SumHours >= 50 && pep.SumHours <= 200) { RankLabel.Content = "Community"; RankImage.Source = new BitmapImage(new Uri("resources\\CommunityStar.png", UriKind.Relative)); }
             if (pep.SumHours >= 200 && pep.SumHours <= 500) { RankLabel.Content = "Service"; RankImage.Source = new BitmapImage(new Uri("resources\\ServiceStar.png", UriKind.Relative)); }
             if (pep.SumHours >= 500) { RankLabel.Content = "Achievement"; RankImage.Source = new BitmapImage(new Uri("resources\\AchievementStar.png", UriKind.Relative)); }
-
+            
             var b = Database.People().OrderByDescending(c => c.SumHours).ToList();
-            TopFiveStudentsListBox.ItemsSource = b.ToList().GetRange(0, 5);
             int num = b.FindIndex(po => po.ID == pep.ID) + 1;
             StudentPlacingLabel.Content = ("#" + num);
+            TopFiveStudentsListBox.ItemsSource = b.ToList().GetRange(0, 5);
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
