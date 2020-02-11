@@ -48,6 +48,9 @@ Student view let's you see their award and all the events they have participated
 
 This view is very limited, and won't have as much control as the admin.
 
+To access student view, the username is the persons first name and their password is the first two letters of their last name and their ID. 
+For example, John Smith 6978  has the username:john password:sm6978.
+
 # Resources used
 
 * Oxy Plot 
