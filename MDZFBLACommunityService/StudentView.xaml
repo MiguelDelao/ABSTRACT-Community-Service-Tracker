@@ -23,10 +23,10 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 
         </Grid.ColumnDefinitions>
 
-        <GroupBox Header="Create New Event" HorizontalAlignment="Left" Height="236" Margin="36,154,0,0" VerticalAlignment="Top" Width="228"/>
+        <GroupBox Header="Create New Event" HorizontalAlignment="Left" Height="236" Margin="36,154,0,0" VerticalAlignment="Top" Width="242" FontSize="14"/>
 
 
-        <GroupBox Header="Rank" HorizontalAlignment="Left" Height="297" Margin="400,133,0,0" VerticalAlignment="Top" Width="268"/>
+        <GroupBox Header="Rank" HorizontalAlignment="Left" Height="297" Margin="400,133,0,0" VerticalAlignment="Top" Width="268" FontSize="14"/>
 
 
         <Rectangle Fill="#FF232323" HorizontalAlignment="Left" Height="576" Margin="744,68,0,0" VerticalAlignment="Top" Width="398"/>
@@ -60,14 +60,14 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         <Label Content="Your Placing:" HorizontalAlignment="Left" Margin="412,400,0,0" VerticalAlignment="Top" FontSize="18" Width="114"/>
         <Label x:Name="StudentPlacingLabel" Content="Rank" HorizontalAlignment="Left" Margin="526,400,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.326,0.621"/>
 
-        <DatePicker x:Name="CalendarSelecter" HorizontalAlignment="Left" Margin="110,204,0,0" VerticalAlignment="Top" Width="120" BorderBrush="White"/>
-        <TextBox x:Name="HoursTextbox" HorizontalAlignment="Left" Height="28" Margin="110,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <DatePicker x:Name="CalendarSelecter" HorizontalAlignment="Left" Margin="110,204,0,0" VerticalAlignment="Top" Width="140" BorderBrush="White"/>
+        <TextBox x:Name="HoursTextbox" HorizontalAlignment="Left" Height="28" Margin="110,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontSize="14"/>
         <Label Content="Hours" HorizontalAlignment="Left" Margin="60,234,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox  x:Name="EventNameTextBox" HorizontalAlignment="Left" Height="28" Margin="110,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" TextChanged="EventNameTextBox_TextChanged"/>
+        <TextBox  x:Name="EventNameTextBox" HorizontalAlignment="Left" Height="28" Margin="110,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontSize="14" TextChanged="EventNameTextBox_TextChanged"/>
         <Label Content="Event" HorizontalAlignment="Left" Margin="60,268,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.5,0.5"/>
         <Button x:Name="CreateButtonClick" Content="Create" HorizontalAlignment="Left" Margin="60,310,0,0" VerticalAlignment="Top" Width="76" Click="CreateButton_Click"/>
         <Label Content="Date" HorizontalAlignment="Left" Margin="68,208,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Button x:Name="Delete" Content="X" HorizontalAlignment="Left" Margin="699,612,0,0" VerticalAlignment="Top" Width="40" Background="#FFC12020" Click="Delete_Click"/>
+        <Button x:Name="Delete" Content="Delete Selected Event" HorizontalAlignment="Left" Margin="560,612,0,0" VerticalAlignment="Top" Width="179" Background="#FFC12020" Click="Delete_Click"/>
 
         <Label x:Name="NameLabel" Content="nam" HorizontalAlignment="Left" Margin="143,58,0,0" VerticalAlignment="Top" FontSize="18" Background="#FF673AB7"/>
         <Label Content="Logged in as:" HorizontalAlignment="Left" Margin="24,59,0,0" VerticalAlignment="Top" FontSize="18" Width="114"/>

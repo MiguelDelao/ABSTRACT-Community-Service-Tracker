@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LiteDB;
-using Mairegger.Printing;
+
 
 
 
@@ -171,7 +171,7 @@ namespace MDZFBLACommunityService
 
             catch (NullReferenceException)
             {
-                MessageBox.Show("No option selected");
+                MessageBox.Show("No Student Selected");
             }
 
         }
@@ -184,8 +184,8 @@ namespace MDZFBLACommunityService
 
             Size pageSize = new Size(printDialog.PrintableAreaWidth, printDialog.PrintableAreaHeight);
 
-            CustomDataGridDocumentPaginator Pageinator = new CustomDataGridDocumentPaginator(AllStudentsDataGrid, "Printing", pageSize, new Thickness(30, 20, 30, 20));
-            printDialog.PrintDocument(Pageinator, "Grid");
+            CustomDataGridDocumentPaginator Pageinator = new CustomDataGridDocumentPaginator(AllStudentsDataGrid, "Students", pageSize, new Thickness(30, 20, 30, 20));
+            printDialog.PrintDocument(Pageinator, "Info");
 
 
 

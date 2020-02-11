@@ -38,7 +38,7 @@ namespace MDZFBLACommunityService
             try
             {
                 Person pp = Database.FindByID(int.Parse(selectedStudentID.Text));
-                mw.SelectedStudentLabel.Content = (pp.FirstName + " " + pp.LastName);
+                mw.NameLabel.Content = (pp.FirstName + " " + pp.LastName);
                 mw.IDTextBox.Text = string.Concat(pp.ID);
             }
             catch
@@ -65,8 +65,9 @@ namespace MDZFBLACommunityService
                 var mw = Application.Current.Windows.Cast<Window>().FirstOrDefault(window => window is AdminHub) as AdminHub;
                 string[] a = selectedStudentComboBox.Text.Split(' ');
                 var pep = Database.FindByName(a[0], a[1]);
-                mw.SelectedStudentLabel.Content = (pep.FirstName + " " + pep.LastName);
+                mw.NameLabel.Content = (pep.FirstName + " " + pep.LastName);
                 mw.IDTextBox.Text = string.Concat(pep.ID);
+                MessageBox.Show("Selected");
             }
             
             
@@ -78,6 +79,22 @@ namespace MDZFBLACommunityService
         private void NameBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void SelectStudentWithIDButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var mw = Application.Current.Windows.Cast<Window>().FirstOrDefault(window => window is AdminHub) as AdminHub;
+                var pep = Database.FindByID(int.Parse(selectedStudentID.Text));
+                mw.NameLabel.Content = (pep.FirstName + " " + pep.LastName);
+                mw.IDTextBox.Text = string.Concat(pep.ID);
+                MessageBox.Show("Selected");
+            }
+            catch
+            {
+                MessageBox.Show("Make sure it's in the right format");
+            }
         }
     }
 }

@@ -34,12 +34,36 @@ namespace MDZFBLACommunityService
             var b = peple.OrderByDescending(c => c.SumHours);
             var o = peple.OrderBy(c => c.SumHours);
 
-            TopFiveStudentsListBox.ItemsSource = b.ToList().GetRange(0, 5);
-            LastFiveStudentsListBox.ItemsSource = o.ToList().GetRange(0, 5);
+            try
+            {
+                TopFiveStudentsListBox.ItemsSource = b.ToList().GetRange(0, 5);
+                LastFiveStudentsListBox.ItemsSource = o.ToList().GetRange(0, 5);
 
+            }
+            catch
+            {
+                MessageBox.Show("Must have at least 5 students to properly generate top 5 lists");
+            }
+            try
+            {
+                MakeModel();
+            }
+            catch
+            {
+                MessageBox.Show("Model cannot be properly made without a student in all grades");
 
-            MakeModel();
-            LabelAwards();
+            }
+
+            try
+            {
+                LabelAwards();
+            }
+           
+            catch
+            {
+
+            }
+
             
         }
 
@@ -47,6 +71,7 @@ namespace MDZFBLACommunityService
 
         public void MakeModel()
         {
+            //generates model
             var peple = Database.People();
             plt = new PlotModel();
             plt.Title = "Average Hours Per Grade";
@@ -96,6 +121,7 @@ namespace MDZFBLACommunityService
 
         public void LabelAwards()
         {
+            //labels awards and creates averages
             var peple = Database.People();
             var unranked = peple.Where(fc => fc.SumHours < 50).Select(gh => gh.SumHours);
             var community = peple.Where(fc => fc.SumHours >= 50 && fc.SumHours < 200).Select(gh => gh.SumHours);

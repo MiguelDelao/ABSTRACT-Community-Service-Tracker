@@ -10,12 +10,12 @@
 
     <Grid>
 
-        <GroupBox Header="Create New Event" HorizontalAlignment="Left" Height="228" Margin="10,95,0,0" VerticalAlignment="Top" Width="218"/>
+        <GroupBox Header="Create New Event" HorizontalAlignment="Left" Height="228" Margin="10,95,0,0" VerticalAlignment="Top" Width="228"/>
 
         <GroupBox Header="Rank" HorizontalAlignment="Left" Height="296" Margin="244,81,0,0" VerticalAlignment="Top" Width="268"/>
 
-        <Rectangle Fill="#FF232323" HorizontalAlignment="Left" Height="593" Margin="534,4,0,0" VerticalAlignment="Top" Width="398"/>
-        <ListView x:Name="HoursListView" HorizontalAlignment="Left" Height="587" Margin="532,10,0,0" VerticalAlignment="Top" Width="398" SelectionChanged="Listviewtest_SelectionChanged">
+        <Rectangle Fill="#FF232323" HorizontalAlignment="Left" Height="593" Margin="517,4,-2,0" VerticalAlignment="Top" Width="425"/>
+        <ListView x:Name="HoursListView" HorizontalAlignment="Left" Height="587" Margin="517,10,0,0" VerticalAlignment="Top" Width="423" SelectionChanged="Listviewtest_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Event" Width="150" DisplayMemberBinding="{Binding Event}" />
@@ -29,9 +29,9 @@
         <Image x:Name="RankImage" Source="resources/ServiceStar.png" HorizontalAlignment="Left" Height="184" Margin="281,187,0,0" VerticalAlignment="Top" Width="184"/>
         <Label Content="Your Placing:" HorizontalAlignment="Left" Margin="247,150,0,0" VerticalAlignment="Top" FontSize="18" Width="110"/>
         <Label x:Name="StudentPlacingLabel" Content="Rank" HorizontalAlignment="Left" Margin="359,150,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.326,0.621"/>
-        <TextBox x:Name="HoursTextbox" HorizontalAlignment="Left" Height="28" Margin="78,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" TextChanged="HoursTextbox_TextChanged"/>
+        <TextBox x:Name="HoursTextbox" HorizontalAlignment="Left" Height="28" Margin="81,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" FontSize="14" TextChanged="HoursTextbox_TextChanged" Foreground="White"/>
         <Label Content="Hours" HorizontalAlignment="Left" Margin="28,187,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox  x:Name="EventNameTextBox" HorizontalAlignment="Left" Height="28" Margin="78,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" TextChanged="EventNameTextBox_TextChanged"/>
+        <TextBox  x:Name="EventNameTextBox" HorizontalAlignment="Left" Height="28" Margin="81,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" FontSize="14" TextChanged="EventNameTextBox_TextChanged" Foreground="White"/>
         <Label Content="Event" HorizontalAlignment="Left" Margin="28,221,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -43,9 +43,9 @@
             </Label.RenderTransform>
         </Label>
         <Button x:Name="CreateButtonClick" Content="Create" HorizontalAlignment="Left" Margin="28,263,0,0" VerticalAlignment="Top" Width="76" Click="CreateButton_Click"/>
-        <DatePicker x:Name="CalendarSelecter" HorizontalAlignment="Left" Margin="78,157,0,0" VerticalAlignment="Top" Width="120" BorderBrush="White"/>
+        <DatePicker x:Name="CalendarSelecter" HorizontalAlignment="Left" Margin="81,157,0,0" VerticalAlignment="Top" Width="126" BorderBrush="White" Foreground="White"/>
         <Label Content="Date" HorizontalAlignment="Left" Margin="36,161,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Button x:Name="Delete" Content="X" HorizontalAlignment="Left" Margin="489,565,0,0" VerticalAlignment="Top" Width="40" Background="#FFC12020" Click="Delete_Click"/>
+        <Button x:Name="Delete" Content="Delete Selected Event" HorizontalAlignment="Left" Margin="335,565,0,0" VerticalAlignment="Top" Width="177" Background="#FFC12020" Click="Delete_Click"/>
         <Label x:Name="NameLabel" Content="nam" HorizontalAlignment="Left" Margin="129,22,0,0" VerticalAlignment="Top" FontSize="18" BorderBrush="#FFB41D1D" Background="#FF6E3BF7"/>
         <Label Content="Logged in as:" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" FontSize="18" Width="114"/>
 

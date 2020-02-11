@@ -46,10 +46,11 @@ namespace MDZFBLACommunityService
             Database.Update(pep);
             HoursListView.ItemsSource = pep.AllHours;
             HoursListView.Items.Refresh();
+                ImageRank();
             }
             catch
             {
-                MessageBox.Show("Make sure everything is filled out");
+                MessageBox.Show("Make sure everything is filled out, and in the right format");
             }
 
         }
@@ -60,11 +61,16 @@ namespace MDZFBLACommunityService
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    Hours h = (Hours)HoursListView.SelectedItem;
-                    pep.RemoveHours(h);
-                    Database.Update(pep);
-                    HoursListView.ItemsSource = pep.AllHours;
-                    HoursListView.Items.Refresh();
+                    if (HoursListView.SelectedItem == null) MessageBox.Show("No Event Selected");
+                    else
+                    {
+                        Hours h = (Hours)HoursListView.SelectedItem;
+                        pep.RemoveHours(h);
+                        Database.Update(pep);
+                        HoursListView.ItemsSource = pep.AllHours;
+                        HoursListView.Items.Refresh();
+                        ImageRank();
+                    }
                     break;
                 case MessageBoxResult.No:
                     break;

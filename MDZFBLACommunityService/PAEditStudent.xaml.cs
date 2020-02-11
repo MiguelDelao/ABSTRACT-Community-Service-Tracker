@@ -91,7 +91,7 @@ namespace MDZFBLACommunityService
                 Database.Update(pep);
                 HoursListView.ItemsSource = pep.AllHours;
                 HoursListView.Items.Refresh();
-                MessageBox.Show("Updated");
+                ImageRank();
             }
             catch
             {
@@ -144,7 +144,7 @@ namespace MDZFBLACommunityService
                     HoursListView.Items.Refresh();
                     
                     }
-                    catch { MessageBox.Show("No one is selected"); }
+                    catch { MessageBox.Show("No Event is Selected"); }
                     break;
                 case MessageBoxResult.No:
                     break;
@@ -167,6 +167,28 @@ namespace MDZFBLACommunityService
             StudentPlacingLabel.Content = ("#" + num);
         }
 
+        private void SelectStudentByIDButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
 
+                pep = Database.FindByID(int.Parse(selectedStudentID.Text));
+                HoursListView.ItemsSource = pep.AllHours;
+                FirstNameTextBox.Text = pep.FirstName;
+                LastNameTextBox.Text = pep.LastName;
+                IDLabel.Content = pep.ID;
+                GradeComboBox.Text = string.Concat(pep.Grade);
+                ImageRank();
+            }
+            catch
+            {
+                MessageBox.Show("Make sure it's in the right format");
+            }
+        }
+
+        private void SelectedStudentID_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

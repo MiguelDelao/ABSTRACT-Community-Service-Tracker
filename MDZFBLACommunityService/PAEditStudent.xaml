@@ -10,15 +10,15 @@
 
     <Grid>
 
-        <GroupBox Header="Create New Event" HorizontalAlignment="Left" Height="190" Margin="21,367,0,0" VerticalAlignment="Top" Width="188" FontSize="14"/>
+        <GroupBox Header="Create New Event" HorizontalAlignment="Left" Height="190" Margin="21,367,0,0" VerticalAlignment="Top" Width="217" FontSize="14"/>
 
         <GroupBox Header="Select Student By Name" HorizontalAlignment="Left" Height="142" Margin="21,171,0,0" VerticalAlignment="Top" Width="188" FontSize="14"/>
 
         <Button x:Name="SelectStudentButton" Content="Select" HorizontalAlignment="Left" Margin="35,267,0,0" VerticalAlignment="Top" Width="76" Click="SelectStudentButton_Click"/>
         <ComboBox x:Name="selectedStudentComboBox" IsEditable="True" HorizontalAlignment="Left" Margin="33,221,0,0" VerticalAlignment="Top" Width="120" BorderBrush="#89FFFFFF" SelectionChanged="NameBox_SelectionChanged" Foreground="White"/>
-        <TextBox x:Name="HoursTextbox" HorizontalAlignment="Left" Height="28" Margin="75,439,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" Foreground="White"/>
+        <TextBox x:Name="HoursTextbox" HorizontalAlignment="Left" Height="28" Margin="83,439,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" FontSize="14" Foreground="White"/>
         <Label Content="Hours:" HorizontalAlignment="Left" Margin="25,439,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox  x:Name="EventNameTextBox" HorizontalAlignment="Left" Height="28" Margin="75,473,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" TextChanged="EventNameTextBox_TextChanged" Foreground="White"/>
+        <TextBox  x:Name="EventNameTextBox" HorizontalAlignment="Left" Height="28" Margin="83,473,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" FontSize="14" TextChanged="EventNameTextBox_TextChanged" Foreground="White"/>
         <Label Content="Event:" HorizontalAlignment="Left" Margin="29,471,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -35,10 +35,10 @@
         <TextBox x:Name="FirstNameTextBox" HorizontalAlignment="Left" Height="32" Margin="14,47,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="198" BorderBrush="Transparent" Foreground="White" Background="#FF464646"/>
         <TextBox x:Name="LastNameTextBox" HorizontalAlignment="Left" Height="32" Margin="212,47,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="201" BorderBrush="Transparent" Foreground="White" Background="#FF464646"/>
         <Button x:Name="UpdateTextBox" Content="Update" HorizontalAlignment="Left" Margin="14,92,0,0" VerticalAlignment="Top" Width="81" Click="UpdateTextBox_Click"/>
-        <DatePicker x:Name="CalendarSelecter" HorizontalAlignment="Left" Margin="75,409,0,0" VerticalAlignment="Top" Width="120" BorderBrush="White" Foreground="White"/>
+        <DatePicker x:Name="CalendarSelecter" HorizontalAlignment="Left" Margin="83,409,0,0" VerticalAlignment="Top" Width="139" BorderBrush="White" Foreground="White"/>
         <Label Content="Date:" HorizontalAlignment="Left" Margin="33,413,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label x:Name="IDLabel_Copy" Content="ID:" HorizontalAlignment="Left" Margin="411,84,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="16"/>
-        <Button x:Name="Delete" Content="X" HorizontalAlignment="Left" Margin="485,554,0,0" VerticalAlignment="Top" Width="42" Background="#FFC12020" Click="Delete_Click"/>
+        <Button x:Name="Delete" Content="Delete Selected Event" HorizontalAlignment="Left" Margin="359,554,0,0" VerticalAlignment="Top" Width="168" Background="#FFC12020" Click="Delete_Click"/>
         <Label Content="Selected Student:" HorizontalAlignment="Left" Margin="14,10,0,0" VerticalAlignment="Top" FontSize="16" Background="#FF5A47D6"/>
         <Rectangle Fill="#FF232323" HorizontalAlignment="Left" Height="576" Margin="532,10,0,0" VerticalAlignment="Top" Width="398"/>
         <ListView x:Name="HoursListView" HorizontalAlignment="Left" Height="576" Margin="532,10,0,0" VerticalAlignment="Top" Width="398" SelectionChanged="Listviewtest_SelectionChanged">
@@ -50,11 +50,11 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBlock  HorizontalAlignment="Left" Margin="252,488,0,0" TextWrapping="Wrap" Text="Their Rank:" VerticalAlignment="Top" FontSize="18" Foreground="White" Height="24" Width="90"/>
-        <Label x:Name="RankLabel" Content="Label" HorizontalAlignment="Left" Margin="342,484,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="Their Placing:" HorizontalAlignment="Left" Margin="245,516,0,0" VerticalAlignment="Top" FontSize="18" Width="114"/>
-        <Label x:Name="StudentPlacingLabel" Content="Rank" HorizontalAlignment="Left" Margin="359,516,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.326,0.621"/>
-        <Image x:Name="RankImage" HorizontalAlignment="Left" Height="70" Margin="252,413,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBlock  HorizontalAlignment="Left" Margin="277,472,0,0" TextWrapping="Wrap" Text="Their Rank:" VerticalAlignment="Top" FontSize="18" Foreground="White" Height="24" Width="90"/>
+        <Label x:Name="RankLabel" Content="None selected" HorizontalAlignment="Left" Margin="367,468,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Their Placing:" HorizontalAlignment="Left" Margin="253,500,0,0" VerticalAlignment="Top" FontSize="18" Width="114"/>
+        <Label x:Name="StudentPlacingLabel" Content="None selected" HorizontalAlignment="Left" Margin="367,500,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.326,0.621"/>
+        <Image x:Name="RankImage" HorizontalAlignment="Left" Height="70" Margin="277,397,0,0" VerticalAlignment="Top" Width="70"/>
         <Label x:Name="IDLabel_Copy1" Content="Grade:" HorizontalAlignment="Left" Margin="418,47,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="16"/>
         <ComboBox x:Name="GradeComboBox" HorizontalAlignment="Left" Margin="477,49,0,0" VerticalAlignment="Top" Width="33" Background="#FF545454" Height="25" Foreground="White" IsEditable="False" >
             <ComboBoxItem IsSelected="True" Content="9"/>
@@ -62,6 +62,9 @@
             <ComboBoxItem Content="11" />
             <ComboBoxItem Content="12" />
         </ComboBox>
+        <GroupBox Header="Select Student By ID" HorizontalAlignment="Left" Height="143" Margin="234,172,0,0" VerticalAlignment="Top" Width="196" FontSize="14"/>
+        <TextBox x:Name="selectedStudentID" HorizontalAlignment="Left" Height="31" Margin="257,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="White" TextChanged="SelectedStudentID_TextChanged"/>
+        <Button x:Name="SelectStudentByIDButton" Content="Select" HorizontalAlignment="Left" Margin="263,267,0,0" VerticalAlignment="Top" Width="74" Click="SelectStudentByIDButton_Click"/>
 
     </Grid>
 </Page>

@@ -69,10 +69,19 @@ namespace MDZFBLACommunityService
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            pep.AddHours(new Hours(double.Parse(HoursTextbox.Text), CalendarSelecter.SelectedDate.Value, EventNameTextBox.Text));
-            Database.Update(pep);
-            HoursListView.ItemsSource = pep.AllHours;
-            HoursListView.Items.Refresh();
+            try
+            {
+                pep.AddHours(new Hours(double.Parse(HoursTextbox.Text), CalendarSelecter.SelectedDate.Value, EventNameTextBox.Text));
+                Database.Update(pep);
+                HoursListView.ItemsSource = pep.AllHours;
+                HoursListView.Items.Refresh();
+                ImageRank();
+            }
+            catch
+            {
+                MessageBox.Show("Make sure everything is filled out, and in the right format");
+            }
+
         }
 
         private void EventNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -86,12 +95,18 @@ namespace MDZFBLACommunityService
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    Hours h = (Hours)HoursListView.SelectedItem;
-                    pep.RemoveHours(h);
-                    Database.Update(pep);
-                    HoursListView.ItemsSource = pep.AllHours;
-                    HoursListView.Items.Refresh();
+                    if (HoursListView.SelectedItem == null) MessageBox.Show("No Event Selected");
+                    else
+                    {
+                        Hours h = (Hours)HoursListView.SelectedItem;
+                        pep.RemoveHours(h);
+                        Database.Update(pep);
+                        HoursListView.ItemsSource = pep.AllHours;
+                        HoursListView.Items.Refresh();
+                        ImageRank();
+                    }
                     break;
+
                 case MessageBoxResult.No:
                     break;
             }

@@ -12,18 +12,18 @@
 
     <Grid>
 
-        <Rectangle Fill="#FF252551" HorizontalAlignment="Left" Height="215" Margin="30,41,0,0" Stroke="Black" VerticalAlignment="Top" Width="437" RadiusY="10.167" RadiusX="10.167"/>
+        <Rectangle Fill="#FF140E1B" HorizontalAlignment="Left" Height="215" Margin="30,41,0,0" Stroke="Black" VerticalAlignment="Top" Width="437" RadiusY="2.5" RadiusX="2.5"/>
 
-        <Rectangle Fill="#FF252551" HorizontalAlignment="Left" Height="522" Margin="584,46,0,0" Stroke="Black" VerticalAlignment="Top" Width="318" RadiusY="6" RadiusX="6"/>
-        <ListBox x:Name="LastFiveStudentsListBox" HorizontalAlignment="Left" Height="160" Margin="602,378,0,0" VerticalAlignment="Top" Width="280" Background="#FF444444" SelectionChanged="LastFiveStudentsListBox_SelectionChanged"/>
-        <ListBox x:Name="TopFiveStudentsListBox" HorizontalAlignment="Left" Height="160" Margin="602,120,0,0" VerticalAlignment="Top" Width="282" Background="#FF444444" SelectionChanged="TopFiveStudentsListBox_SelectionChanged"/>
+        <Rectangle Fill="#FF140E1B" HorizontalAlignment="Left" Height="522" Margin="584,46,0,0" Stroke="Black" VerticalAlignment="Top" Width="318" RadiusY="6" RadiusX="6"/>
+        <ListBox x:Name="LastFiveStudentsListBox" HorizontalAlignment="Left" Height="183" Margin="584,361,0,0" VerticalAlignment="Top" Width="318" Background="{x:Null}" SelectionChanged="LastFiveStudentsListBox_SelectionChanged" FontSize="14"/>
+        <ListBox x:Name="TopFiveStudentsListBox" HorizontalAlignment="Left" Height="185" Margin="584,99,0,0" VerticalAlignment="Top" Width="318" Background="{x:Null}" SelectionChanged="TopFiveStudentsListBox_SelectionChanged" FontSize="14"/>
         <Label Content="Top Five Students" HorizontalAlignment="Left" Margin="654,60,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#DDFFFFFF" Width="180"/>
         <Label Content="Bottom Five Students" HorizontalAlignment="Left" Margin="634,324,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#DDFFFFFF" Width="216"/>
         <oxy1:PlotView x:Name="plotview" Margin="56,298,500,34" IsMouseWheelEnabled="False" IsManipulationEnabled="False"/>
-        <Label Content="Amount of Unranked:" HorizontalAlignment="Left" Margin="92,48,0,0" VerticalAlignment="Top" Height="32" Width="160" FontSize="16"/>
-        <Label Content="Amount of Community:" HorizontalAlignment="Left" Margin="76,99,0,0" VerticalAlignment="Top" Height="32" Width="176" FontSize="16"/>
-        <Label Content="Amount of Service:" HorizontalAlignment="Left" Margin="108,138,0,0" VerticalAlignment="Top" Height="32" Width="144" FontSize="16"/>
-        <Label Content="Amount of Achievement:" HorizontalAlignment="Left" Margin="68,181,0,0" VerticalAlignment="Top" Height="32" Width="184" FontSize="16"/>
+        <Label Content="Unranked:" HorizontalAlignment="Left" Margin="165,48,0,0" VerticalAlignment="Top" Height="32" Width="82" FontSize="16"/>
+        <Label Content="Community:" HorizontalAlignment="Left" Margin="156,99,0,0" VerticalAlignment="Top" Height="32" Width="96" FontSize="16"/>
+        <Label Content="Service:" HorizontalAlignment="Left" Margin="190,138,0,0" VerticalAlignment="Top" Height="32" Width="62" FontSize="16"/>
+        <Label Content=" Achievement:" HorizontalAlignment="Left" Margin="143,181,0,0" VerticalAlignment="Top" Height="32" Width="109" FontSize="16"/>
         <Label x:Name="AmountUnrankedLabel" Content="0" HorizontalAlignment="Left" Margin="252,48,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
         <Label x:Name="AmountCommunityLabel" Content="0" HorizontalAlignment="Left" Margin="252,99,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
         <Label x:Name="AmountServiceLabel" Content="0" HorizontalAlignment="Left" Margin="252,138,0,0" VerticalAlignment="Top" Height="32" Width="56" FontSize="16"/>
@@ -57,6 +57,7 @@
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="5" Margin="30,131,0,0" Stroke="Black" VerticalAlignment="Top" Width="437"/>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="5" Margin="30,174,0,0" Stroke="Black" VerticalAlignment="Top" Width="437"/>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="5" Margin="30,214,0,0" Stroke="Black" VerticalAlignment="Top" Width="437"/>
+        <Label Content="Students that are:" HorizontalAlignment="Left" Margin="140,9,0,0" VerticalAlignment="Top" Height="32" Width="143" FontSize="16" FontWeight="Bold"/>
 
     </Grid>
 

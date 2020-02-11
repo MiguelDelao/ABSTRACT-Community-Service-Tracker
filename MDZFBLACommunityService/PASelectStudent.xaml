@@ -13,7 +13,7 @@
 
         <Label Content="Select with ID" HorizontalAlignment="Left" Margin="359,261,0,0" VerticalAlignment="Top" Width="120" FontSize="16"/>
         <TextBox x:Name="selectedStudentID" HorizontalAlignment="Left" Height="31" Margin="359,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="White" TextChanged="SelectedStudentID_TextChanged"/>
-        <Button x:Name="SelectStudentButton" Content="Select" HorizontalAlignment="Left" Margin="364,345,0,0" VerticalAlignment="Top" Width="74" Click="SelectStudentButton_Click"/>
+        <Button x:Name="SelectStudentWithIDButton" Content="Select" HorizontalAlignment="Left" Margin="364,345,0,0" VerticalAlignment="Top" Width="74" Click="SelectStudentWithIDButton_Click" />
         <Button x:Name="SelectStudentButtonByName" Content="Select" HorizontalAlignment="Left" Margin="364,200,0,0" VerticalAlignment="Top" Width="76" Click="SelectStudentButtonByName_Click" />
         <Label Content="Select by Name" HorizontalAlignment="Left" Margin="368,116,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Background="#003E3E40" FontSize="16"/>
         <ComboBox x:Name="selectedStudentComboBox" IsEditable="True" HorizontalAlignment="Left" Margin="372,145,0,0" VerticalAlignment="Top" Width="120" BorderBrush="White" SelectionChanged="NameBox_SelectionChanged" Foreground="White"/>
