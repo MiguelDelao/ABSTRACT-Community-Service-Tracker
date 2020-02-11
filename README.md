@@ -14,11 +14,11 @@ You may choose to to install the application directly to your computer. You can 
 
 
 # App Documentation
-This will hold all the documentation for the app.
+This will hold all the documentation for the app. These buttons fall under the Admin Hub.
 
-# Admin Hub
 
 ## All Students
+
 * GENERAL
 This tab gives you a list of all the students in the database in the form of a data grid. You can edit people as well by selecting them and the text boxes fill in with that persons info. 
 
@@ -42,10 +42,19 @@ Select a student by clicking under the "Select Student By Name" tab.
 You can change the persons First name, Last name, and grade by clicking on each one respectively.. The update button underneath it will make the changes. 
 
 Clicking the red  button will delete whatever event you have selected.
+## Student View
+
+Student view let's you see their award and all the events they have participated in. You can create and delete new events here for the individual student. You can also compare your hours with others in the database by placing.
+
+This view is very limited, and won't have as much control as the admin.
 
 
+# Resources used
 
-## Built With
-
-*
+* Oxy Plot 
+* Material Design 
+* LiteDB
+* LogoMakr.com
+* Custom Datagrid Printer 
+https://tinyurl.com/vynyrm5
 
