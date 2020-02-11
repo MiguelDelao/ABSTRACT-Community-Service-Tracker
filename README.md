@@ -47,7 +47,6 @@ Clicking the red  button will delete whatever event you have selected.
 Student view let's you see their award and all the events they have participated in. You can create and delete new events here for the individual student. You can also compare your hours with others in the database by placing.
 
 This view is very limited, and won't have as much control as the admin.
-##
 
 # Resources used
 
