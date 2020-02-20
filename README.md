@@ -14,7 +14,7 @@ You may choose to to install the application directly to your computer. You can 
 
 
 # App Documentation
-This will hold all the documentation for the app. These buttons fall under the Admin Hub. To access the admin hub, the username and password is admin.
+This will hold all the documentation for the app. These buttons fall under the Admin Hub. To access the admin hub, the username and password is both admin.
 
 
 ## All Students
