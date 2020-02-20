@@ -62,12 +62,19 @@ namespace MDZFBLACommunityService
             if (selectedStudentComboBox.SelectedItem == null) MessageBox.Show("Make sure someone is selected");
             else
             {
+                try
+                {
                 var mw = Application.Current.Windows.Cast<Window>().FirstOrDefault(window => window is AdminHub) as AdminHub;
                 string[] a = selectedStudentComboBox.Text.Split(' ');
                 var pep = Database.FindByName(a[0], a[1]);
                 mw.NameLabel.Content = (pep.FirstName + " " + pep.LastName);
                 mw.IDTextBox.Text = string.Concat(pep.ID);
                 MessageBox.Show("Selected");
+                }
+                catch
+                {
+                    MessageBox.Show("Make sure you selected someone");
+                }
             }
             
             
