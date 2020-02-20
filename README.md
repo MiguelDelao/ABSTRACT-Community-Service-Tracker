@@ -1,87 +1,62 @@
-# Project Title
+# ABSTRACT Community Service Tracker
 
-One Paragraph of project description goes here
+This was developed by Miguel Delao-Zurita for the FBLA Coding and Programming challenge.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+The .NET Framework is the only prerequisite for this project.
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+You may choose to to install the application directly to your computer. You can do so by opening "setup.exe" under the "Installations" folder. However, it will not have the sample database. You can also choose to just open the app shortcut.
 
-Say what the step will be
 
-```
-Give the example
-```
 
-And repeat
+# App Documentation
+This will hold all the documentation for the app. These buttons fall under the Admin Hub. To access the admin hub, the username and password is admin.
 
-```
-until finished
-```
 
-End with an example of getting some data out of the system or using it for a little demo
+## All Students
 
-## Running the tests
+* GENERAL
+This tab gives you a list of all the students in the database in the form of a data grid. You can edit people as well by selecting them and the text boxes fill in with that persons info. 
 
-Explain how to run the automated tests for this system
+* FILTER
+Under the filter expander you can filter the data grid to whatever you want. For example, if you just want to see just 9th graders that have the community award, then you can do so there. 
 
-### Break down into end to end tests
+* PRINT
+Clicking the print button generates a PDF with all the information  in the data grid. If the data grid is filtered, it will generate the report with just the filtered data.
 
-Explain what these tests test and why
+## Statistics
+Here you can see all sorts data on the students, like average hours per award, the top and bottom 5 students, and average per grade.
 
-```
-Give an example
-```
+## Create Student
+This is where you create new students. You can choose to only create a student, or add the event that they participated in. 
 
-### And coding style tests
+## Edit Student
+This is where you can see the individual events from a student.
 
-Explain what these tests test and why
+Select a student by clicking under the "Select Student By Name" tab. 
 
-```
-Give an example
-```
+You can change the persons First name, Last name, and grade by clicking on each one respectively.. The update button underneath it will make the changes. 
 
-## Deployment
+Clicking the red  button will delete whatever event you have selected.
+## Student View
 
-Add additional notes about how to deploy this on a live system
+Student view let's you see their award and all the events they have participated in. You can create and delete new events here for the individual student. You can also compare your hours with others in the database by placing.
 
-## Built With
+This view is very limited, and won't have as much control as the admin.
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+To access student view, the username is the persons first name, and their password is the first two letters of their last name and their ID. 
+For example, John Smith 6978  has the username:john password:sm6978.
 
-## Contributing
+# Resources used
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+* Oxy Plot 
+* Material Design 
+* LiteDB
+* LogoMakr.com
+* Custom Datagrid Printer 
+https://tinyurl.com/vynyrm5
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
