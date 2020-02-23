@@ -41,7 +41,8 @@ namespace MDZFBLACommunityService
 
         private void Help_Click(object sender, RoutedEventArgs e)
         {
-
+            var help = new HelpWindow();
+            help.Show();
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)

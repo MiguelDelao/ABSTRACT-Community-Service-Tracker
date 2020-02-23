@@ -21,18 +21,23 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 
 
 
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="197*"/>
+
+
+
         </Grid.ColumnDefinitions>
 
-        <GroupBox Header="Create New Event" HorizontalAlignment="Left" Height="236" Margin="36,154,0,0" VerticalAlignment="Top" Width="242" FontSize="14"/>
+        <GroupBox Header="Create New Event" HorizontalAlignment="Left" Height="236" Margin="18,154,0,0" VerticalAlignment="Top" Width="242" FontSize="14" Grid.Column="1"/>
 
 
-        <GroupBox Header="Rank" HorizontalAlignment="Left" Height="297" Margin="400,133,0,0" VerticalAlignment="Top" Width="268" FontSize="14"/>
+        <GroupBox Header="Rank" HorizontalAlignment="Left" Height="297" Margin="382,133,0,0" VerticalAlignment="Top" Width="268" FontSize="14" Grid.Column="1"/>
 
 
-        <Rectangle Fill="#FF232323" HorizontalAlignment="Left" Height="576" Margin="744,68,0,0" VerticalAlignment="Top" Width="398"/>
+        <Rectangle Fill="#FF232323" HorizontalAlignment="Left" Height="576" Margin="726,68,0,0" VerticalAlignment="Top" Width="398" Grid.Column="1"/>
 
 
-        <Menu HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="145"  Background="White" Foreground="Black" >
+        <Menu HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="145"  Background="White" Foreground="Black" Grid.ColumnSpan="2" >
             <MenuItem Header="_Options" Height="31" Click="MenuItem_Click">
                 <MenuItem Header="_Help" Click="Help_Click" />
                 <MenuItem Header="_Logout" Click="Logout_Click" />
@@ -41,11 +46,11 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             </MenuItem>
 
         </Menu>
-        <Rectangle MouseDown="Rectangle_MouseDown" Fill="White" HorizontalAlignment="Left" Height="31" Margin="138,0,0,0" VerticalAlignment="Top" Width="1062"/>
-        <Button Content="X" x:Name="close" HorizontalAlignment="Left" Margin="1151.7,0,0,0" VerticalAlignment="Top" Width="48.3" Height="31" BorderThickness="0" UseLayoutRounding="False" Click="Close_Click" Background="{x:Null}" BorderBrush="Black" Foreground="#DDFF0000" FontSize="18" />
-        <Button x:Name="HelpButton" Content="?" HorizontalAlignment="Left" Margin="17,633,0,0" VerticalAlignment="Top" Width="45"  />
-        <ListBox HorizontalAlignment="Left" Height="100" Margin="886,246,0,0" VerticalAlignment="Top" Width="100"/>
-        <ListView x:Name="HoursListView" HorizontalAlignment="Left" Height="576" Margin="744,68,0,0" VerticalAlignment="Top" Width="398" SelectionChanged="Listviewtest_SelectionChanged">
+        <Rectangle MouseDown="Rectangle_MouseDown" Fill="White" HorizontalAlignment="Left" Height="31" Margin="120,0,0,0" VerticalAlignment="Top" Width="1062" Grid.Column="1"/>
+        <Button Content="X" x:Name="close" HorizontalAlignment="Left" Margin="1133.7,0,0,0" VerticalAlignment="Top" Width="48.3" Height="31" BorderThickness="0" UseLayoutRounding="False" Click="Close_Click" Background="{x:Null}" BorderBrush="Black" Foreground="#DDFF0000" FontSize="18" Grid.Column="1" />
+        <Button x:Name="HelpButton" Content="?" HorizontalAlignment="Left" Margin="17,633,0,0" VerticalAlignment="Top" Width="45" Grid.ColumnSpan="2"  />
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="868,246,0,0" VerticalAlignment="Top" Width="100" Grid.Column="1"/>
+        <ListView x:Name="HoursListView" HorizontalAlignment="Left" Height="576" Margin="726,68,0,0" VerticalAlignment="Top" Width="398" SelectionChanged="Listviewtest_SelectionChanged" Grid.Column="1">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Event" Width="150" DisplayMemberBinding="{Binding Event}" />
@@ -54,23 +59,23 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBlock  HorizontalAlignment="Left" Margin="412,180,0,0" TextWrapping="Wrap" Text="Your Rank:" VerticalAlignment="Top" FontSize="18" Foreground="White" Height="24" Width="90"/>
-        <Label x:Name="RankLabel" Content="Label" HorizontalAlignment="Left" Margin="502,176,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Image x:Name="RankImage" Source="resources/ServiceStar.png" HorizontalAlignment="Left" Height="184" Margin="452,211,0,0" VerticalAlignment="Top" Width="184"/>
-        <Label Content="Your Placing:" HorizontalAlignment="Left" Margin="412,400,0,0" VerticalAlignment="Top" FontSize="18" Width="114"/>
-        <Label x:Name="StudentPlacingLabel" Content="Rank" HorizontalAlignment="Left" Margin="526,400,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.326,0.621"/>
+        <TextBlock  HorizontalAlignment="Left" Margin="394,180,0,0" TextWrapping="Wrap" Text="Your Rank:" VerticalAlignment="Top" FontSize="18" Foreground="White" Height="24" Width="90" Grid.Column="1"/>
+        <Label x:Name="RankLabel" Content="Label" HorizontalAlignment="Left" Margin="484,176,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
+        <Image x:Name="RankImage" Source="resources/ServiceStar.png" HorizontalAlignment="Left" Height="184" Margin="434,211,0,0" VerticalAlignment="Top" Width="184" Grid.Column="1"/>
+        <Label Content="Your Placing:" HorizontalAlignment="Left" Margin="394,400,0,0" VerticalAlignment="Top" FontSize="18" Width="114" Grid.Column="1"/>
+        <Label x:Name="StudentPlacingLabel" Content="Rank" HorizontalAlignment="Left" Margin="508,400,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.326,0.621" Grid.Column="1"/>
 
-        <DatePicker x:Name="CalendarSelecter" HorizontalAlignment="Left" Margin="110,204,0,0" VerticalAlignment="Top" Width="140" BorderBrush="White"/>
-        <TextBox x:Name="HoursTextbox" HorizontalAlignment="Left" Height="28" Margin="110,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontSize="14"/>
-        <Label Content="Hours" HorizontalAlignment="Left" Margin="60,234,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox  x:Name="EventNameTextBox" HorizontalAlignment="Left" Height="28" Margin="110,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontSize="14" TextChanged="EventNameTextBox_TextChanged"/>
-        <Label Content="Event" HorizontalAlignment="Left" Margin="60,268,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.5,0.5"/>
-        <Button x:Name="CreateButtonClick" Content="Create" HorizontalAlignment="Left" Margin="60,310,0,0" VerticalAlignment="Top" Width="76" Click="CreateButton_Click"/>
-        <Label Content="Date" HorizontalAlignment="Left" Margin="68,208,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Button x:Name="Delete" Content="Delete Selected Event" HorizontalAlignment="Left" Margin="560,612,0,0" VerticalAlignment="Top" Width="179" Background="#FFC12020" Click="Delete_Click"/>
+        <DatePicker x:Name="CalendarSelecter" HorizontalAlignment="Left" Margin="92,204,0,0" VerticalAlignment="Top" Width="140" BorderBrush="White" Grid.Column="1"/>
+        <TextBox x:Name="HoursTextbox" HorizontalAlignment="Left" Height="28" Margin="92,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontSize="14" Grid.Column="1"/>
+        <Label Content="Hours" HorizontalAlignment="Left" Margin="42,234,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="1"/>
+        <TextBox  x:Name="EventNameTextBox" HorizontalAlignment="Left" Height="28" Margin="92,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontSize="14" TextChanged="EventNameTextBox_TextChanged" Grid.Column="1"/>
+        <Label Content="Event" HorizontalAlignment="Left" Margin="42,268,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+        <Button x:Name="CreateButtonClick" Content="Create" HorizontalAlignment="Left" Margin="42,310,0,0" VerticalAlignment="Top" Width="76" Click="CreateButton_Click" Grid.Column="1"/>
+        <Label Content="Date" HorizontalAlignment="Left" Margin="50,208,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="1"/>
+        <Button x:Name="Delete" Content="Delete Selected Event" HorizontalAlignment="Left" Margin="542,612,0,0" VerticalAlignment="Top" Width="179" Background="#FFC12020" Click="Delete_Click" Grid.Column="1"/>
 
-        <Label x:Name="NameLabel" Content="nam" HorizontalAlignment="Left" Margin="143,58,0,0" VerticalAlignment="Top" FontSize="18" Background="#FF673AB7"/>
-        <Label Content="Logged in as:" HorizontalAlignment="Left" Margin="24,59,0,0" VerticalAlignment="Top" FontSize="18" Width="114"/>
+        <Label x:Name="NameLabel" Content="nam" HorizontalAlignment="Left" Margin="125,58,0,0" VerticalAlignment="Top" FontSize="18" Background="#FF673AB7" Grid.Column="1"/>
+        <Label Content="Logged in as:" HorizontalAlignment="Left" Margin="6,59,0,0" VerticalAlignment="Top" FontSize="18" Width="114" Grid.Column="1"/>
 
 
     </Grid>
