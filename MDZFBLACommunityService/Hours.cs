@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace MDZFBLACommunityService
 {
+    //This object holds the individual hour,event, and date for the Person object.
     class Hours
     {
         public double Hour { get; set; }
         public DateTime Date { get; set; }
         public string Event { get; set; }
+
         public Hours()
         {
             Hour = 0;
@@ -23,6 +25,7 @@ namespace MDZFBLACommunityService
             Date = d;
             Event = e;
         }
+
         public override string ToString()
         {
             return (Hour + " Hours at " + Event + " on " + Date);

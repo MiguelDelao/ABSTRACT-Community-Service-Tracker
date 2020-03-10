@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace MDZFBLACommunityService
 {
 
-    //Person class holds all info for the student
+    /* This object holds all the information for a single person, 
+     * including each individual hour and their event.
+     */
     class Person
     {
         public string FirstName { get; set; }
@@ -15,7 +17,10 @@ namespace MDZFBLACommunityService
         public int ID { get; set; }
         public int Grade { get; set; }
         public double SumHours { get; set; }
+
         public List<Hours> AllHours { get; set; }
+        
+        
         public Person()
         {
             FirstName = null;
@@ -23,7 +28,6 @@ namespace MDZFBLACommunityService
             ID = 0;
             Grade = 0;
         }
-
         public Person(string fir,string las,int grad,Hours h)
         {
             AllHours = new List<Hours>();
@@ -35,7 +39,6 @@ namespace MDZFBLACommunityService
             SumHours = AllHours.Sum(Hours => Hours.Hour);
 
         }
-
         public Person(string fir, string las, int grad)
         {
             AllHours = new List<Hours>();
@@ -46,43 +49,24 @@ namespace MDZFBLACommunityService
             SumHours = AllHours.Sum(Hours => Hours.Hour);
 
         }
+        
 
 
-        public Person(string a, string b, int c, int d, double e, DateTime f)
-        {
-            FirstName = a;
-            LastName = b;
-            ID = c;
-            Grade = d;
-            
 
-        }
-        public Person(string fir, string las, int i, int grad, double hour,string even)
-        {
-            FirstName = fir;
-            LastName = las;
-            ID = i;
-            Grade = grad;
-            
-        }
-        public Person(string fir, string las, int grad, double hour)
-        {
-            FirstName = fir;
-            LastName = las;
-            Grade = grad;
-            
-        }
+
         public override string ToString()
         {
             return (FirstName + " " + LastName +  ", Grade: " + Grade +  ", " + SumHours + " Hours");
         }
 
-
+        //adds an hour class to the hour array 
         public void AddHours(Hours h)
         {
             AllHours.Add(h);
             SumHours = AllHours.Sum(Hours => Hours.Hour);
         }
+
+        //removes the hour object from the hour array
         public void RemoveHours(Hours h)
         {
             AllHours.Remove(h);

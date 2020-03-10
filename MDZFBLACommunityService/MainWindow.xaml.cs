@@ -23,11 +23,10 @@ namespace MDZFBLACommunityService
         public MainWindow()
         {
             InitializeComponent();
-
-           
+ 
         }
 
-
+        
         
 
 
@@ -63,6 +62,7 @@ namespace MDZFBLACommunityService
                     {
                         log = p;
                         
+
                     }
                 }
                 

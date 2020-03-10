@@ -34,6 +34,7 @@ namespace MDZFBLACommunityService
         {
 
         }
+
         private void NameBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
            
@@ -124,10 +125,6 @@ namespace MDZFBLACommunityService
             
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-           
-        }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
@@ -156,6 +153,7 @@ namespace MDZFBLACommunityService
         {
 
         }
+
         public void ImageRank()
         {
             if (pep.SumHours < 50) { RankLabel.Content = "Unranked"; RankImage.Source = new BitmapImage(new Uri("resources\\UnrankedStar.png", UriKind.Relative)); }

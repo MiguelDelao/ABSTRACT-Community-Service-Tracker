@@ -80,6 +80,7 @@ namespace MDZFBLACommunityService
         {
             var help = new HelpWindow();
             help.Show();
+            
 
         }
 
