@@ -9,7 +9,7 @@ The .NET Framework is the only prerequisite for this project.
 
 ### Installing
 
-You may choose to to install the application directly to your computer. You can do so by opening "setup.exe" under the "Installations" folder. However, it will not have the sample database. You can also choose to just open the app shortcut.
+You may choose to install the application directly to your computer. You can do so by opening "setup.exe" under the "Installations" folder. However, it will not have the sample database. You can also choose to just open the app shortcut.
 
 
 
