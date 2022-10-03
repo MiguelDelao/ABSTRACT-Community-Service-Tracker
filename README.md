@@ -2,7 +2,7 @@
 
 This was developed by Miguel Delao-Zurita for the FBLA Coding and Programming challenge.
 
-# Important
+# *IMPORANT*
 Due to the depcreciated nature of WPF windows forms and this project being made 3 years ago, unfortunately I am unable to fix the installation at the moment. For the time, this project is a proof of my hard work. 
 
 
